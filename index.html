@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vortex POS</title>
+<meta name="description" content="Vortex es el sistema POS en la nube para retail, restaurantes y servicios. Cobra rápido, controla tu inventario en tiempo real y administra todas tus sucursales desde un solo lugar.">
+<meta name="theme-color" content="#0a0b12">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Vortex — El punto de venta que impulsa tu negocio">
+<meta property="og:description" content="Sistema POS en la nube. Ventas, inventario, facturación y reportes en una sola plataforma.">
+<meta property="og:locale" content="es_MX">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<a class="skip-link" href="#main">Saltar al contenido</a>
+
+<!-- ============ HEADER ============ -->
+<header class="site-header" id="header">
+  <div class="container header-inner">
+    <a class="brand" href="#top" aria-label="Vortex, inicio">
+      <img src="assets/vortex (1).png" alt="Vortex" class="brand-logo" />
+    </a>
+
+    <nav class="nav" id="nav" aria-label="Navegación principal">
+      <a href="#funciones">Funciones</a>
+      <a href="#como-funciona">Cómo funciona</a>
+      <a href="#precios">Precios</a>
+      <a href="#clientes">Clientes</a>
+      <a href="#faq">FAQ</a>
+      <div class="nav-cta">
+        <a class="btn btn-ghost" href="#demo">Iniciar sesión</a>
+        <a class="btn btn-primary" href="#demo">Prueba gratis</a>
+      </div>
+    </nav>
+
+    <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="nav" aria-label="Abrir menú">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<main id="main">
+
+<!-- ============ HERO ============ -->
+<section class="hero demo-hero" id="top">
+  <div class="hero-backdrop" aria-hidden="true">
+    <div class="hero-orb hero-orb--one"></div>
+    <div class="hero-orb hero-orb--two"></div>
+    <div class="hero-grid"></div>
+  </div>
+
+  <div class="container hero-stage">
+    <div class="hero-scene">
+      <div class="hero-content" style="--d:.05s">
+        <span class="pill">
+          Control de ventas y facturación automática
+        </span>
+
+        <h1>
+          El punto de venta<br>que <span class="grad">impulsa</span> tu negocio
+        </h1>
+
+        <p class="lead">
+          Cobra en segundos, controla tu inventario en tiempo real y administra
+          todas tus sucursales desde un solo lugar. Todo lo que necesitas para hacer crecer tu negocio sin complicarte con la administración.
+        </p>
+
+        <div class="hero-actions">
+          <a class="btn btn-primary btn-lg" href="#demo">Comenzar prueba de 14 días</a>
+          <a class="btn btn-outline btn-lg" href="#como-funciona">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M5 3.5v9l7-4.5-7-4.5Z"/></svg>
+            Ver demo
+          </a>
+        </div>
+      </div>
+
+      <div class="hero-app-wrap" style="--d:.25s">
+        <div class="hero-app-frame">
+        <div class="hero-floating-card hero-floating-card--left" aria-hidden="true">
+          <span class="fc-label">Venta del día</span>
+          <strong>$42,180</strong>
+          <span class="fc-delta up">▲ 18.4%</span>
+        </div>
+
+        <div class="hero-floating-card hero-floating-card--right" aria-hidden="true">
+          <span class="fc-label">Tiempo por ticket</span>
+          <strong>11 s</strong>
+          <span class="fc-delta down">▼ 3.2 s</span>
+        </div>
+
+        <div class="hero-app" role="img" aria-label="Interfaz del punto de venta Vortex mostrando actividad en tiempo real">
+          <div class="app-bar">
+            <span class="dots"><i></i><i></i><i></i></span>
+            <span class="app-title">Vortex POS · Sucursal Centro</span>
+            <span class="badge-live"><i></i>En línea</span>
+          </div>
+
+          <div class="app-body">
+            <div class="app-catalog">
+              <div class="app-search">Buscar producto o escanear código…</div>
+              <div class="cat-grid">
+                <div class="cat-item"><span class="cat-emoji">☕</span><b>Café latte</b><em>$48.00</em></div>
+                <div class="cat-item"><span class="cat-emoji">🥐</span><b>Croissant</b><em>$35.00</em></div>
+                <div class="cat-item"><span class="cat-emoji">🥪</span><b>Sándwich</b><em>$79.00</em></div>
+                <div class="cat-item"><span class="cat-emoji">🍰</span><b>Cheesecake</b><em>$65.00</em></div>
+                <div class="cat-item"><span class="cat-emoji">🧃</span><b>Jugo natural</b><em>$42.00</em></div>
+                <div class="cat-item"><span class="cat-emoji">🍪</span><b>Galleta</b><em>$22.00</em></div>
+              </div>
+            </div>
+
+            <div class="app-ticket">
+              <div class="ticket-head">
+                <span>Ticket #1042</span>
+                <span class="ticket-user">Ana R.</span>
+              </div>
+              <div class="ticket-lines">
+                <div class="tline"><span>2 × Café latte</span><b>$96.00</b></div>
+                <div class="tline"><span>1 × Croissant</span><b>$35.00</b></div>
+                <div class="tline"><span>1 × Cheesecake</span><b>$65.00</b></div>
+              </div>
+              <div class="ticket-sum">
+                <div><span>Subtotal</span><b>$196.00</b></div>
+                <div><span>IVA 16%</span><b>$31.36</b></div>
+                <div class="total"><span>Total</span><b>$227.36</b></div>
+              </div>
+              <div class="ticket-pay">Cobrar · F12</div>
+            </div>
+          </div>
+        </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ============ VALUE STRIP ============ -->
+<section class="value-strip">
+  <div class="container">
+    <ul class="value-grid">
+      <li class="value-item reveal">
+        <span class="value-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4.5 14v-2a7.5 7.5 0 0 1 15 0v2"/>
+            <rect x="2.75" y="13.5" width="3.5" height="5.5" rx="1.75"/>
+            <rect x="17.75" y="13.5" width="3.5" height="5.5" rx="1.75"/>
+            <path d="M19.5 19v.5a2.5 2.5 0 0 1-2.5 2.5h-2"/>
+          </svg>
+        </span>
+        <h3>Soporte 24/7</h3>
+        <p>Un equipo real te responde por teléfono, correo y chat a cualquier hora, también fines de semana y días festivos.</p>
+      </li>
+
+      <li class="value-item reveal" style="--d:.06s">
+        <span class="value-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 9.5a8 8 0 0 1 13.4-3.4L20 8.5"/>
+            <path d="M20 4.5v4h-4"/>
+            <path d="M20 14.5a8 8 0 0 1-13.4 3.4L4 15.5"/>
+            <path d="M4 19.5v-4h4"/>
+          </svg>
+        </span>
+        <h3>Inventario sincronizado</h3>
+        <p>Cada venta descuenta el stock al instante en todas tus cajas y sucursales. Un solo inventario, siempre al día.</p>
+      </li>
+
+      <li class="value-item reveal" style="--d:.12s">
+        <span class="value-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 3.25 19 6v5.5c0 4.2-2.8 7.6-7 9.25-4.2-1.65-7-5.05-7-9.25V6l7-2.75Z"/>
+            <path d="M9.25 12.15 11.4 14.3l3.6-4"/>
+          </svg>
+        </span>
+        <h3>Tu información protegida</h3>
+        <p>Respaldo automático y cifrado de cada venta. Aunque se pierda o se rompa un equipo, tu historial sigue intacto.</p>
+      </li>
+
+      <li class="value-item reveal" style="--d:.18s">
+        <span class="value-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 19.5V13M10 19.5V9M16 19.5v-6M4.5 6.5 9 4l4 2.5 6.5-3"/>
+            <path d="M19.5 3.5v3.2M19.5 3.5h-3.2"/>
+          </svg>
+        </span>
+        <h3>Listo para crecer</h3>
+        <p>Del mostrador único a varias sucursales con el mismo Vortex, sin migrar de sistema. Activas lo que necesites cuando lo necesites.</p>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============ PRODUCTO ============ -->
+<section class="section connect" id="plataforma">
+  <div class="container connect-inner">
+    <div class="connect-copy reveal">
+      <span class="connect-badge">Qué es Vortex</span>
+
+      <h2>Todo tu negocio, en una sola pantalla</h2>
+
+      <p class="connect-lead">
+        Vortex es el punto de venta en la nube donde pasa todo: cobras, descuentas
+        el inventario, emites la factura y ves tus números en el mismo lugar. Abre
+        en el navegador de cualquier equipo, sin instalar nada, y si se cae el
+        internet sigues vendiendo igual.
+      </p>
+
+      <a class="btn btn-outline btn-lg" href="#como-funciona">Ver cómo funciona</a>
+
+      <p class="connect-note">Prueba de 14 días. Sin tarjeta de crédito.</p>
+
+      <div class="connect-compat">
+        <span class="compat-label">Incluye:</span>
+        <ul class="compat-list">
+          <li class="compat-tile" title="Ventas y cobro">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M6 3h12l1.5 18H4.5L6 3Z"/>
+              <path d="M9 7.5h6M9 11.5h6M9 15.5h3"/>
+            </svg>
+            <span class="sr-only">Ventas y cobro</span>
+          </li>
+          <li class="compat-tile" title="Inventario">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M3.5 7.5 12 3l8.5 4.5v9L12 21l-8.5-4.5v-9Z"/>
+              <path d="M3.5 7.5 12 12l8.5-4.5M12 12v9"/>
+            </svg>
+            <span class="sr-only">Inventario</span>
+          </li>
+          <li class="compat-tile" title="Facturación electrónica">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M13.5 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8.5L13.5 3Z"/>
+              <path d="M13 3.5V9h5.5M8.5 13h7M8.5 16.5h4"/>
+            </svg>
+            <span class="sr-only">Facturación electrónica</span>
+          </li>
+          <li class="compat-tile" title="Reportes">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M4 20V12M10 20V5M16 20v-6M22 20H2"/>
+            </svg>
+            <span class="sr-only">Reportes</span>
+          </li>
+          <li class="compat-tile" title="Clientes">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <circle cx="9.5" cy="8" r="3.5"/>
+              <path d="M3 20v-.8A5.2 5.2 0 0 1 8.2 14h2.6a5.2 5.2 0 0 1 5.2 5.2v.8"/>
+              <path d="M16.5 5.2a3.5 3.5 0 0 1 0 5.6M18 14.2a5.2 5.2 0 0 1 3 4.7v1.1"/>
+            </svg>
+            <span class="sr-only">Clientes</span>
+          </li>
+          <li class="compat-tile" title="Multi-sucursal">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M3.5 9.5 5 4h14l1.5 5.5"/>
+              <path d="M3.5 9.5a2.6 2.6 0 0 0 5 0 2.6 2.6 0 0 0 5 0 2.6 2.6 0 0 0 5 0 2.6 2.6 0 0 0 2 0"/>
+              <path d="M5 11.5V20h14v-8.5M10 20v-5h4v5"/>
+            </svg>
+            <span class="sr-only">Multi-sucursal</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="connect-visual reveal" style="--d:.1s" aria-hidden="true">
+      <div class="cv-card">
+        <div class="cv-head">
+          <span class="cv-node cv-node--brand">V</span>
+          <span class="cv-head-text">
+            <strong>Vortex POS</strong>
+            <em>Caja 1 · Sucursal Centro</em>
+          </span>
+        </div>
+
+        <div class="cv-amount">
+          <span>Total del ticket</span>
+          <b>$227.36</b>
+        </div>
+
+        <div class="cv-status">
+          <strong><i></i>Vendiendo sin internet</strong>
+          <span>12 tickets en cola · se sincronizan solos</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FEATURES ============ -->
+<section class="section" id="funciones">
+  <div class="container">
+    <header class="section-head reveal">
+      <span class="eyebrow">Funciones</span>
+      <h2>Todo lo que tu mostrador necesita,<br>en una sola plataforma</h2>
+      <p>Deja de pegar con cinta adhesiva cinco herramientas distintas. Vortex conecta ventas, inventario, clientes y contabilidad en un mismo flujo.</p>
+    </header>
+
+    <div class="feature-grid">
+      <article class="card reveal">
+        <div class="card-icon i-violet">⚡</div>
+        <h3>Ventas en segundos</h3>
+        <p>Interfaz pensada para el mostrador: atajos de teclado, lector de código de barras y cobro con efectivo, tarjeta o transferencia en un solo paso.</p>
+      </article>
+
+      <article class="card reveal" style="--d:.06s">
+        <div class="card-icon i-cyan">📦</div>
+        <h3>Inventario en tiempo real</h3>
+        <p>El stock se descuenta al instante en todas tus sucursales. Alertas de mínimos, control de mermas y órdenes de compra automáticas.</p>
+      </article>
+
+      <article class="card reveal" style="--d:.12s">
+        <div class="card-icon i-amber">🏬</div>
+        <h3>Multi-sucursal</h3>
+        <p>Precios, promociones y permisos por punto de venta. Compara el desempeño de cada tienda desde un panel único.</p>
+      </article>
+
+      <article class="card reveal" style="--d:.06s">
+        <div class="card-icon i-pink">🧾</div>
+        <h3>Facturación electrónica</h3>
+        <p>Timbra CFDI 4.0 directo desde el ticket. Facturación global al cierre del día y envío automático por correo.</p>
+      </article>
+
+      <article class="card reveal" style="--d:.12s">
+        <div class="card-icon i-green">📊</div>
+        <h3>Reportes que sí se leen</h3>
+        <p>Márgenes por producto, horas pico, rendimiento por cajero y utilidad real. Exporta a Excel o conéctalo con tu contador.</p>
+      </article>
+
+      <article class="card reveal" style="--d:.18s">
+        <div class="card-icon i-blue">📴</div>
+        <h3>Modo offline</h3>
+        <p>Si se cae el internet, sigues vendiendo. Vortex guarda todo localmente y sincroniza en cuanto vuelve la conexión.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ HOW IT WORKS ============ -->
+<section class="section section-alt" id="como-funciona">
+  <div class="container">
+    <header class="section-head reveal">
+      <span class="eyebrow">Cómo funciona</span>
+      <h2>De cero a tu primera venta<br>en menos de un día</h2>
+    </header>
+
+    <ol class="steps">
+      <li class="step reveal">
+        <span class="step-num">01</span>
+        <h3>Crea tu cuenta</h3>
+        <p>Regístrate con tu correo y elige el giro de tu negocio. Vortex precarga catálogos, impuestos y categorías por ti.</p>
+      </li>
+      <li class="step reveal" style="--d:.08s">
+        <span class="step-num">02</span>
+        <h3>Carga tu catálogo</h3>
+        <p>Importa productos desde Excel o CSV, o escanea códigos con la cámara del celular. Migramos tus datos sin costo.</p>
+      </li>
+      <li class="step reveal" style="--d:.16s">
+        <span class="step-num">03</span>
+        <h3>Abre caja y vende</h3>
+        <p>Funciona en tablet, computadora o terminal. Conecta impresora, cajón de dinero y terminal bancaria en minutos.</p>
+      </li>
+    </ol>
+
+    <div class="hardware reveal">
+      <div class="hardware-copy">
+        <h3>Compatible con el hardware que ya tienes</h3>
+        <p>Impresoras térmicas ESC/POS, lectores de código de barras USB o Bluetooth, básculas, cajones de dinero y las principales terminales de pago del mercado.</p>
+        <a class="link-arrow" href="#demo">Ver lista de compatibilidad <span>→</span></a>
+      </div>
+      <ul class="hardware-list">
+        <li><span>🖨️</span> Impresoras térmicas 58 / 80 mm</li>
+        <li><span>🔍</span> Lectores 1D y QR</li>
+        <li><span>⚖️</span> Básculas con etiqueta de peso</li>
+        <li><span>💳</span> Terminales de pago integradas</li>
+        <li><span>💵</span> Cajones de dinero RJ11</li>
+        <li><span>📱</span> Android, iPad, Windows y navegador</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PRICING ============ -->
+<section class="section" id="precios">
+  <div class="container">
+    <header class="section-head reveal">
+      <span class="eyebrow">Precios</span>
+      <h2>Planes claros, sin comisiones<br>por venta</h2>
+      <p>Todos los planes incluyen actualizaciones, respaldos automáticos y soporte en español.</p>
+    </header>
+
+    <div class="billing-toggle reveal" role="group" aria-label="Periodicidad de pago">
+      <button class="bt-btn is-active" data-cycle="mensual" aria-pressed="true">Mensual</button>
+      <button class="bt-btn" data-cycle="anual" aria-pressed="false">Anual <span class="save">&minus;20%</span></button>
+    </div>
+
+    <div class="price-grid">
+      <article class="plan reveal">
+        <h3>Emprende</h3>
+        <p class="plan-desc">Para un solo punto de venta que está arrancando.</p>
+        <p class="plan-price"><span class="cur">$</span><b data-monthly="499" data-annual="399">499</b><span class="per">/mes</span></p>
+        <a class="btn btn-outline btn-block" href="#demo">Empezar gratis</a>
+        <ul class="plan-list">
+          <li>1 sucursal · 2 cajas</li>
+          <li>Productos ilimitados</li>
+          <li>Inventario básico</li>
+          <li>Reportes de ventas</li>
+          <li>Soporte por chat</li>
+        </ul>
+      </article>
+
+      <article class="plan plan-featured reveal" style="--d:.08s">
+        <span class="plan-tag">Más popular</span>
+        <h3>Crece</h3>
+        <p class="plan-desc">Para negocios con varias cajas y un catálogo grande.</p>
+        <p class="plan-price"><span class="cur">$</span><b data-monthly="999" data-annual="799">999</b><span class="per">/mes</span></p>
+        <a class="btn btn-primary btn-block" href="#demo">Probar 14 días</a>
+        <ul class="plan-list">
+          <li>Hasta 3 sucursales · cajas ilimitadas</li>
+          <li>Facturación electrónica CFDI 4.0</li>
+          <li>Órdenes de compra y proveedores</li>
+          <li>Promociones y programa de lealtad</li>
+          <li>Modo offline</li>
+          <li>Soporte prioritario</li>
+        </ul>
+      </article>
+
+      <article class="plan reveal" style="--d:.16s">
+        <h3>Escala</h3>
+        <p class="plan-desc">Para cadenas y operaciones multi-ciudad.</p>
+        <p class="plan-price"><span class="cur">$</span><b data-monthly="2199" data-annual="1759">2,199</b><span class="per">/mes</span></p>
+        <a class="btn btn-outline btn-block" href="#demo">Hablar con ventas</a>
+        <ul class="plan-list">
+          <li>Sucursales ilimitadas</li>
+          <li>API y webhooks</li>
+          <li>Roles y permisos avanzados</li>
+          <li>Panel corporativo consolidado</li>
+          <li>Integración contable y ERP</li>
+          <li>Gerente de cuenta dedicado</li>
+        </ul>
+      </article>
+    </div>
+
+    <p class="price-note reveal">Precios en MXN + IVA. ¿Más de 20 sucursales? <a href="#demo">Armemos un plan a tu medida.</a></p>
+  </div>
+</section>
+
+<!-- ============ TESTIMONIALS ============ -->
+<section class="section section-alt" id="clientes">
+  <div class="container">
+    <header class="section-head reveal">
+      <span class="eyebrow">Clientes</span>
+      <h2>Negocios que ya cerraron<br>el mes con Vortex</h2>
+    </header>
+
+    <div class="quote-grid">
+      <figure class="quote reveal">
+        <blockquote>Bajamos el tiempo de cobro a la mitad. En hora pico la fila ya no se hace, y eso se nota directo en las ventas del día.</blockquote>
+        <figcaption><span class="avatar av1">MG</span><span><b>Mariana G.</b><em>Café Norte · 3 sucursales</em></span></figcaption>
+      </figure>
+
+      <figure class="quote reveal" style="--d:.08s">
+        <blockquote>Por fin sé qué producto me deja dinero y cuál solo ocupa espacio. El reporte de márgenes cambió cómo compro inventario.</blockquote>
+        <figcaption><span class="avatar av2">RD</span><span><b>Ricardo D.</b><em>La Bodega · Abarrotes</em></span></figcaption>
+      </figure>
+
+      <figure class="quote reveal" style="--d:.16s">
+        <blockquote>Se fue el internet un viernes completo y seguimos vendiendo sin enterarnos. Cuando volvió, todo se sincronizó solo.</blockquote>
+        <figcaption><span class="avatar av3">PL</span><span><b>Paola L.</b><em>Óptica Visión</em></span></figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section class="section" id="faq">
+  <div class="container container-narrow">
+    <header class="section-head reveal">
+      <span class="eyebrow">Preguntas frecuentes</span>
+      <h2>Lo que todos nos preguntan</h2>
+    </header>
+
+    <div class="faq">
+      <details class="faq-item reveal">
+        <summary>¿Necesito comprar hardware nuevo?</summary>
+        <div class="faq-body"><p>No. Vortex corre en el navegador y en apps para Android, iPad y Windows. Si ya tienes impresora térmica, lector de códigos o cajón de dinero, lo más probable es que sean compatibles.</p></div>
+      </details>
+
+      <details class="faq-item reveal">
+        <summary>¿Qué pasa si se cae el internet?</summary>
+        <div class="faq-body"><p>Sigues vendiendo. El modo offline guarda cada ticket en el dispositivo y sincroniza automáticamente con la nube cuando vuelve la conexión, sin duplicados ni ventas perdidas.</p></div>
+      </details>
+
+      <details class="faq-item reveal">
+        <summary>¿Cobran comisión por cada venta?</summary>
+        <div class="faq-body"><p>Nunca. Pagas únicamente tu suscripción mensual o anual. Las comisiones bancarias las define tu terminal de pago, no nosotros.</p></div>
+      </details>
+
+      <details class="faq-item reveal">
+        <summary>¿Pueden migrar mi información actual?</summary>
+        <div class="faq-body"><p>Sí, sin costo en todos los planes. Nos envías tu catálogo en Excel, CSV o el respaldo de tu sistema anterior y nuestro equipo lo deja listo antes de que abras caja.</p></div>
+      </details>
+
+      <details class="faq-item reveal">
+        <summary>¿Incluye facturación electrónica?</summary>
+        <div class="faq-body"><p>Los planes Crece y Escala timbran CFDI 4.0 directamente desde el ticket, incluyen facturación global al cierre del día y envío automático por correo al cliente.</p></div>
+      </details>
+
+      <details class="faq-item reveal">
+        <summary>¿Puedo cancelar cuando quiera?</summary>
+        <div class="faq-body"><p>Sí. No hay contratos forzosos ni penalizaciones. Si cancelas, puedes exportar todos tus datos en cualquier momento.</p></div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CTA ============ -->
+<section class="cta" id="demo">
+  <div class="container">
+    <div class="cta-box reveal">
+      <div class="cta-glow" aria-hidden="true"></div>
+      <h2>Tu próxima venta puede ser<br>mucho más rápida</h2>
+      <p>Prueba Vortex 14 días gratis. Sin tarjeta, sin instalación, sin compromiso.</p>
+
+      <form class="cta-form" id="ctaForm" novalidate>
+        <label class="sr-only" for="email">Correo electrónico</label>
+        <input type="email" id="email" name="email" placeholder="tu@negocio.com" autocomplete="email" required>
+        <button class="btn btn-primary" type="submit">Crear mi cuenta</button>
+      </form>
+      <p class="cta-msg" id="ctaMsg" role="status" aria-live="polite"></p>
+
+      <ul class="cta-checks">
+        <li>Configuración guiada</li>
+        <li>Migración de datos gratis</li>
+        <li>Soporte en español</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div class="footer-brand">
+      <a class="brand" href="#top">
+        <img src="assets/vortex (1).png" alt="Vortex" class="brand-logo" />
+      </a>
+      <p>El sistema de punto de venta en la nube para negocios que no se quieren detener.</p>
+    </div>
+
+    <nav class="footer-col" aria-label="Producto">
+      <h4>Producto</h4>
+      <a href="#funciones">Funciones</a>
+      <a href="#precios">Precios</a>
+      <a href="#como-funciona">Hardware</a>
+      <a href="#demo">Prueba gratis</a>
+    </nav>
+
+    <nav class="footer-col" aria-label="Empresa">
+      <h4>Empresa</h4>
+      <a href="#clientes">Clientes</a>
+      <a href="#faq">Preguntas</a>
+      <a href="#top">Blog</a>
+      <a href="#top">Trabaja con nosotros</a>
+    </nav>
+
+    <nav class="footer-col" aria-label="Soporte">
+      <h4>Soporte</h4>
+      <a href="#top">Centro de ayuda</a>
+      <a href="#top">Estado del servicio</a>
+      <a href="#top">Documentación API</a>
+      <a href="#top">Contacto</a>
+    </nav>
+  </div>
+
+  <div class="container footer-bottom">
+    <p>&copy; <span id="year">2026</span> Vortex POS. Todos los derechos reservados.</p>
+    <p class="footer-legal"><a href="#top">Privacidad</a><a href="#top">Términos</a><a href="#top">Cookies</a></p>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
