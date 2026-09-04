@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="es-DO">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contacto — Vortex POS</title>
+<meta name="description" content="Habla con el equipo de Vortex: escríbenos por WhatsApp, correo o el formulario y te respondemos el mismo día hábil.">
+<meta name="theme-color" content="#4459E1">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Contacto — Vortex POS">
+<meta property="og:description" content="Cuéntanos qué vendes y te respondemos el mismo día hábil.">
+<meta property="og:locale" content="es_DO">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<a class="skip-link" href="#main">Saltar al contenido</a>
+
+<!-- ============ HEADER ============ -->
+<header class="site-header" id="header">
+  <div class="container header-inner">
+    <a class="brand" href="index.html#top" aria-label="Vortex, inicio">
+      <img src="assets/vortex (1).png" alt="Vortex" class="brand-logo" />
+    </a>
+
+    <nav class="nav" id="nav" aria-label="Navegación principal">
+      <a href="index.html#funciones">Funciones</a>
+      <a href="planes.html">Planes</a>
+      <a href="recursos.html">Recursos</a>
+      <a href="index.html#faq">FAQ</a>
+      <a href="contacto.html" aria-current="page">Contacto</a>
+      <div class="nav-cta">
+        <a class="btn btn-ghost" href="#form">Iniciar sesión</a>
+        <a class="btn btn-primary" href="#form">Prueba gratis</a>
+      </div>
+    </nav>
+
+    <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="nav" aria-label="Abrir menú">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<main id="main">
+
+<!-- ============ CONTACTO ============ -->
+<section class="section section-first contacto" id="contacto">
+  <div class="container">
+    <header class="ct-head reveal">
+      <span class="eyebrow">Contacto</span>
+      <h2>Hablemos de <em>tu negocio</em></h2>
+      <p>Cuéntanos qué vendes y cómo trabajas hoy. Te respondemos el mismo día hábil con una propuesta concreta, no con un catálogo genérico.</p>
+    </header>
+
+    <div class="ct-grid">
+      <div class="ct-form-card reveal" id="form">
+        <form class="ct-form" id="contactForm" novalidate>
+          <div class="ct-row">
+            <label class="ct-field">
+              <span>Nombre y apellido</span>
+              <input type="text" name="nombre" id="ctNombre" autocomplete="name" required>
+            </label>
+            <label class="ct-field">
+              <span>Nombre del negocio</span>
+              <input type="text" name="negocio" id="ctNegocio" autocomplete="organization" required>
+            </label>
+          </div>
+
+          <div class="ct-row">
+            <label class="ct-field">
+              <span>Correo</span>
+              <input type="email" name="correo" id="ctCorreo" placeholder="tu@negocio.com" autocomplete="email" required>
+            </label>
+            <label class="ct-field">
+              <span>Teléfono o WhatsApp</span>
+              <input type="tel" name="telefono" id="ctTelefono" placeholder="(809) 000-0000" autocomplete="tel">
+            </label>
+          </div>
+
+          <div class="ct-row">
+            <label class="ct-field">
+              <span>¿Cuántas sucursales?</span>
+              <select name="sucursales" id="ctSucursales">
+                <option value="1">Una</option>
+                <option value="2-3">Entre 2 y 3</option>
+                <option value="4-10">Entre 4 y 10</option>
+                <option value="10+">Más de 10</option>
+              </select>
+            </label>
+            <label class="ct-field">
+              <span>¿Qué vendes?</span>
+              <select name="giro" id="ctGiro">
+                <option>Colmado o minimarket</option>
+                <option>Ropa y boutique</option>
+                <option>Restaurante o café</option>
+                <option>Ferretería</option>
+                <option>Farmacia</option>
+                <option>Otro giro</option>
+              </select>
+            </label>
+          </div>
+
+          <label class="ct-field">
+            <span>Cuéntanos qué necesitas</span>
+            <textarea name="mensaje" id="ctMensaje" rows="4" placeholder="Vendo en dos tiendas y llevo el inventario en Excel…"></textarea>
+          </label>
+
+          <button class="btn btn-primary btn-lg ct-submit" type="submit">
+            Enviar mensaje
+            <svg viewBox="0 0 15 13" fill="none" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6" d="m10.083 11.417 4-5.334m0 0-4-5.333m4 5.333H.75"/></svg>
+          </button>
+          <p class="ct-msg" id="ctMsg" role="status" aria-live="polite"></p>
+          <p class="ct-legal">Al enviar aceptas que te contactemos sobre Vortex. Nada de listas de correo que no pediste.</p>
+        </form>
+      </div>
+
+      <aside class="ct-side">
+        <ul class="ct-channels reveal">
+          <li>
+            <span class="ct-ico">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.5 11.7a8.4 8.4 0 0 1-12.2 7.5L3.5 20.5l1.4-4.7a8.4 8.4 0 1 1 15.6-4.1Z"/><path d="M8.9 9.2c0 3.2 2.7 5.9 5.9 5.9l1.4-1.7-2.2-1-1 1a5 5 0 0 1-2.4-2.4l1-1-1-2.2-1.7 1.4Z"/></svg>
+            </span>
+            <div><b>WhatsApp</b><i>Lo más rápido, de 8:00 a 6:00</i></div>
+            <a href="#form">(809) 000-0000</a>
+          </li>
+          <li>
+            <span class="ct-ico">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2.5" y="5" width="19" height="14" rx="2.5"/><path d="m3.5 7 8.5 6 8.5-6"/></svg>
+            </span>
+            <div><b>Correo</b><i>Respuesta el mismo día hábil</i></div>
+            <a href="#form">hola@vortex.do</a>
+          </li>
+          <li>
+            <span class="ct-ico">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 3.5H4.5A1.5 1.5 0 0 0 3 5c0 8.6 7.4 16 16 16a1.5 1.5 0 0 0 1.5-1.5V17l-4.5-1.5-2 2a13 13 0 0 1-6-6l2-2L7 3.5Z"/></svg>
+            </span>
+            <div><b>Teléfono</b><i>Lunes a viernes, 8:00 a 6:00</i></div>
+            <a href="#form">(809) 000-0000</a>
+          </li>
+          <li>
+            <span class="ct-ico">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s7-5.6 7-11a7 7 0 1 0-14 0c0 5.4 7 11 7 11Z"/><circle cx="12" cy="10" r="2.6"/></svg>
+            </span>
+            <div><b>Oficina</b><i>Santo Domingo, República Dominicana</i></div>
+            <a href="#form">Agenda una visita</a>
+          </li>
+        </ul>
+
+        <div class="ct-demo reveal">
+          <h3>¿Prefieres verlo funcionando?</h3>
+          <p>Te mostramos Vortex con tus productos y tus precios en una llamada de 20 minutos.</p>
+          <a class="ct-demo-btn" href="#form">Agendar una demo
+            <svg viewBox="0 0 15 13" fill="none" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6" d="m10.083 11.417 4-5.334m0 0-4-5.333m4 5.333H.75"/></svg>
+          </a>
+        </div>
+
+        <p class="ct-note reveal">¿Solo buscas ayuda con algo del sistema? Empieza por el <a href="recursos.html">centro de recursos</a> o las <a href="index.html#faq">preguntas frecuentes</a>.</p>
+      </aside>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div class="footer-brand">
+      <a class="brand" href="index.html#top">
+        <img src="assets/vortex (1).png" alt="Vortex" class="brand-logo" />
+      </a>
+      <p>El sistema de punto de venta en la nube para negocios que no se quieren detener.</p>
+    </div>
+
+    <nav class="footer-col" aria-label="Producto">
+      <h4>Producto</h4>
+      <a href="index.html#funciones">Funciones</a>
+      <a href="planes.html">Planes</a>
+      <a href="recursos.html">Recursos</a>
+      <a href="contacto.html">Prueba gratis</a>
+    </nav>
+
+    <nav class="footer-col" aria-label="Empresa">
+      <h4>Empresa</h4>
+      <a href="index.html#faq">Preguntas</a>
+      <a href="index.html#top">Blog</a>
+      <a href="index.html#top">Trabaja con nosotros</a>
+    </nav>
+
+    <nav class="footer-col" aria-label="Soporte">
+      <h4>Soporte</h4>
+      <a href="index.html#top">Centro de ayuda</a>
+      <a href="index.html#top">Estado del servicio</a>
+      <a href="index.html#top">Documentación API</a>
+      <a href="contacto.html">Contacto</a>
+    </nav>
+  </div>
+
+  <div class="container footer-bottom">
+    <p>&copy; <span id="year">2026</span> Vortex POS. Todos los derechos reservados.</p>
+    <p class="footer-legal"><a href="index.html#top">Privacidad</a><a href="index.html#top">Términos</a><a href="index.html#top">Cookies</a></p>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

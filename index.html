@@ -1,16 +1,16 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es-DO">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Vortex POS</title>
 <meta name="description" content="Vortex es el sistema POS en la nube para retail, restaurantes y servicios. Cobra rápido, controla tu inventario en tiempo real y administra todas tus sucursales desde un solo lugar.">
-<meta name="theme-color" content="#0a0b12">
+<meta name="theme-color" content="#4459E1">
 
 <meta property="og:type" content="website">
 <meta property="og:title" content="Vortex — El punto de venta que impulsa tu negocio">
 <meta property="og:description" content="Sistema POS en la nube. Ventas, inventario, facturación y reportes en una sola plataforma.">
-<meta property="og:locale" content="es_MX">
+<meta property="og:locale" content="es_DO">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -30,10 +30,10 @@
 
     <nav class="nav" id="nav" aria-label="Navegación principal">
       <a href="#funciones">Funciones</a>
-      <a href="#como-funciona">Cómo funciona</a>
-      <a href="#precios">Precios</a>
-      <a href="#clientes">Clientes</a>
+      <a href="planes.html">Planes</a>
+      <a href="#recursos">Recursos</a>
       <a href="#faq">FAQ</a>
+      <a href="contacto.html">Contacto</a>
       <div class="nav-cta">
         <a class="btn btn-ghost" href="#demo">Iniciar sesión</a>
         <a class="btn btn-primary" href="#demo">Prueba gratis</a>
@@ -74,7 +74,7 @@
 
         <div class="hero-actions">
           <a class="btn btn-primary btn-lg" href="#demo">Comenzar prueba de 14 días</a>
-          <a class="btn btn-outline btn-lg" href="#como-funciona">
+          <a class="btn btn-outline btn-lg" href="#plataforma">
             <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M5 3.5v9l7-4.5-7-4.5Z"/></svg>
             Ver demo
           </a>
@@ -95,42 +95,113 @@
           <span class="fc-delta down">▼ 3.2 s</span>
         </div>
 
-        <div class="hero-app" role="img" aria-label="Interfaz del punto de venta Vortex mostrando actividad en tiempo real">
-          <div class="app-bar">
-            <span class="dots"><i></i><i></i><i></i></span>
-            <span class="app-title">Vortex POS · Sucursal Centro</span>
-            <span class="badge-live"><i></i>En línea</span>
-          </div>
+        <div class="hero-app" role="img" aria-label="Pantalla de venta de Vortex POS con el catálogo de productos y la factura en curso">
+          <aside class="va-side">
+            <div class="va-brand"><span class="va-burger"><i></i><i></i><i></i></span>VORTEX</div>
 
-          <div class="app-body">
-            <div class="app-catalog">
-              <div class="app-search">Buscar producto o escanear código…</div>
-              <div class="cat-grid">
-                <div class="cat-item"><span class="cat-emoji">☕</span><b>Café latte</b><em>$48.00</em></div>
-                <div class="cat-item"><span class="cat-emoji">🥐</span><b>Croissant</b><em>$35.00</em></div>
-                <div class="cat-item"><span class="cat-emoji">🥪</span><b>Sándwich</b><em>$79.00</em></div>
-                <div class="cat-item"><span class="cat-emoji">🍰</span><b>Cheesecake</b><em>$65.00</em></div>
-                <div class="cat-item"><span class="cat-emoji">🧃</span><b>Jugo natural</b><em>$42.00</em></div>
-                <div class="cat-item"><span class="cat-emoji">🍪</span><b>Galleta</b><em>$22.00</em></div>
-              </div>
+            <div class="va-user">
+              <span class="va-avatar"></span>
+              <span class="va-user-txt"><b>Administrador</b><i>perezc@gmail.com</i></span>
             </div>
 
-            <div class="app-ticket">
-              <div class="ticket-head">
-                <span>Ticket #1042</span>
-                <span class="ticket-user">Ana R.</span>
+            <ul class="va-nav">
+              <li><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 6.8 8 2.5l5.5 4.3v6a1 1 0 0 1-1 1h-9a1 1 0 0 1-1-1v-6Z"/></svg>Inicio</li>
+              <li class="is-open"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h2l1.6 7.5h7L14 5.5H4.4"/><circle cx="6.5" cy="13" r="1"/><circle cx="12" cy="13" r="1"/></svg>Ventas</li>
+            </ul>
+
+            <ul class="va-sub">
+              <li class="is-active">Venta</li>
+              <li>Registro de Ventas</li>
+              <li>Devoluciones</li>
+            </ul>
+
+            <ul class="va-nav">
+              <li><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 5 8 2.2 13.5 5v6L8 13.8 2.5 11V5Z"/><path d="M2.5 5 8 7.8 13.5 5M8 7.8v6"/></svg>Inventario</li>
+              <li><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="6.3" cy="5.8" r="2.3"/><path d="M2 13v-.6A2.9 2.9 0 0 1 4.9 9.5h2.8a2.9 2.9 0 0 1 2.9 2.9v.6"/><path d="M11 3.8a2.3 2.3 0 0 1 0 4M12 9.7a2.9 2.9 0 0 1 2 2.7v.6"/></svg>Clientes</li>
+              <li><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9.2 2H4.5a1.3 1.3 0 0 0-1.3 1.3v9.4A1.3 1.3 0 0 0 4.5 14h7a1.3 1.3 0 0 0 1.3-1.3V5.6L9.2 2Z"/><path d="M9 2.3v3.4h3.5"/></svg>Facturas</li>
+              <li><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M3 13.5V8M8 13.5V4M13 13.5v-3.5"/></svg>Reportes</li>
+              <li><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="8" r="2.1"/><path d="M8 1.8v1.6M8 12.6v1.6M14.2 8h-1.6M3.4 8H1.8M12.4 3.6l-1.1 1.1M4.7 11.3l-1.1 1.1M12.4 12.4l-1.1-1.1M4.7 4.7 3.6 3.6"/></svg>Administración</li>
+              <li><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 6.5v-4h7v4"/><rect x="2.2" y="6.5" width="11.6" height="5" rx="1.2"/><path d="M4.5 9.5h7v4h-7z"/></svg>Impresoras</li>
+            </ul>
+
+            <ul class="va-nav va-nav--foot">
+              <li><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="8" r="6"/><path d="M6.4 6.2a1.7 1.7 0 1 1 2.3 1.6c-.4.2-.7.5-.7 1M8 11.2h.01"/></svg>Ayuda</li>
+              <li><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="8" r="2.1"/><path d="M8 1.8v1.6M8 12.6v1.6M14.2 8h-1.6M3.4 8H1.8"/></svg>Configuración</li>
+            </ul>
+          </aside>
+
+          <div class="va-main">
+            <div class="va-top">
+              <b class="va-h1">POS</b>
+              <span class="va-date">martes, 22 de abril de 2025</span>
+              <span class="va-search">Buscar...</span>
+              <span class="va-bell"><i>3</i></span>
+              <span class="va-chip">
+                <span class="va-chip-logo"></span>
+                <span class="va-chip-txt"><b>Pollos Mr Fry</b><i>Central</i></span>
+              </span>
+            </div>
+
+            <div class="va-body">
+              <div class="va-cat">
+                <div class="va-toolbar">
+                  <span class="va-input">Buscar Productos...</span>
+                  <span class="va-filter">Filtros</span>
+                  <span class="va-views"><i></i><i class="on"></i></span>
+                </div>
+
+                <div class="va-chips">
+                  <span class="is-active">Todo</span><span>Herramientas</span><span>Electricidad</span>
+                  <span>Pintura</span><span>PVC</span><span>Accesorios</span>
+                </div>
+
+                <div class="va-grid">
+                  <article class="va-prod"><span class="va-thumb"></span><div class="va-prod-row"><b>Metro Truper</b><em>RD$ 180.00</em></div><div class="va-prod-row"><i>Stock: 15</i><span class="va-add">Agregar</span></div></article>
+                  <article class="va-prod"><span class="va-thumb"></span><div class="va-prod-row"><b>Taladro Truper</b><em>RD$ 740.00</em></div><div class="va-prod-row"><i>Stock: 15</i><span class="va-add">Agregar</span></div></article>
+                  <article class="va-prod"><span class="va-thumb"></span><div class="va-prod-row"><b>Spray Abro Rojo</b><em>RD$ 55.00</em></div><div class="va-prod-row"><i>Stock: 15</i><span class="va-add">Agregar</span></div></article>
+                  <article class="va-prod"><span class="va-thumb"></span><div class="va-prod-row"><b>Inter Doble</b><em>RD$ 50.00</em></div><div class="va-prod-row"><i>Stock: 15</i><span class="va-add">Agregar</span></div></article>
+                  <article class="va-prod"><span class="va-thumb"></span><div class="va-prod-row"><b>Metro Truper</b><em>RD$ 180.00</em></div><div class="va-prod-row"><i>Stock: 15</i><span class="va-add">Agregar</span></div></article>
+                  <article class="va-prod"><span class="va-thumb"></span><div class="va-prod-row"><b>Taladro Truper</b><em>RD$ 740.00</em></div><div class="va-prod-row"><i>Stock: 15</i><span class="va-add">Agregar</span></div></article>
+                </div>
               </div>
-              <div class="ticket-lines">
-                <div class="tline"><span>2 × Café latte</span><b>$96.00</b></div>
-                <div class="tline"><span>1 × Croissant</span><b>$35.00</b></div>
-                <div class="tline"><span>1 × Cheesecake</span><b>$65.00</b></div>
+
+              <div class="va-inv">
+                <span class="va-inv-t">Factura de venta</span>
+
+                <div class="va-fields">
+                  <span><i>Numeración</i><b>Consumo (02)</b></span>
+                  <span><i>Estado</i><b>Completada</b></span>
+                </div>
+
+                <div class="va-sec">Información de Cliente</div>
+
+                <div class="va-lines">
+                  <div class="va-line">
+                    <div class="va-line-top"><b>SPRAY ABRO ROJO</b><em>RD$ 450.0</em></div>
+                    <div class="va-line-bot"><span class="va-qty"><i>−</i><u>3</u><i>+</i></span><em>RD$120 cu</em></div>
+                  </div>
+                  <div class="va-line">
+                    <div class="va-line-top"><b>SPRAY ABRO ROJO</b><em>RD$ 450.0</em></div>
+                    <div class="va-line-bot"><span class="va-qty"><i>−</i><u>3</u><i>+</i></span><em>RD$120 cu</em></div>
+                  </div>
+                  <div class="va-line">
+                    <div class="va-line-top"><b>SPRAY ABRO ROJO</b><em>RD$ 450.0</em></div>
+                    <div class="va-line-bot"><span class="va-qty"><i>−</i><u>3</u><i>+</i></span><em>RD$120 cu</em></div>
+                  </div>
+                </div>
+
+                <div class="va-totals">
+                  <div><span>Subtotal:</span><b>RD$795.00</b></div>
+                  <div><span>Descuento Total:</span><b>-RD$10.00</b></div>
+                  <div><span>ITBIS (18%)</span><b>RD$141.30</b></div>
+                  <div class="va-total"><span>Total</span><b>RD$926.30</b></div>
+                </div>
+
+                <div class="va-actions">
+                  <span class="va-btn va-btn--ghost">Cancelar</span>
+                  <span class="va-btn va-btn--main">Procesar</span>
+                </div>
               </div>
-              <div class="ticket-sum">
-                <div><span>Subtotal</span><b>$196.00</b></div>
-                <div><span>IVA 16%</span><b>$31.36</b></div>
-                <div class="total"><span>Total</span><b>$227.36</b></div>
-              </div>
-              <div class="ticket-pay">Cobrar · F12</div>
             </div>
           </div>
         </div>
@@ -200,318 +271,656 @@
 <section class="section connect" id="plataforma">
   <div class="container connect-inner">
     <div class="connect-copy reveal">
-      <span class="connect-badge">Qué es Vortex</span>
+      <span class="connect-badge">Punto de venta</span>
 
-      <h2>Todo tu negocio, en una sola pantalla</h2>
+      <h2>Un sistema de venta que <span class="grad">resuelve todo el mostrador</span></h2>
 
       <p class="connect-lead">
-        Vortex es el punto de venta en la nube donde pasa todo: cobras, descuentas
-        el inventario, emites la factura y ves tus números en el mismo lugar. Abre
-        en el navegador de cualquier equipo, sin instalar nada, y si se cae el
-        internet sigues vendiendo igual.
+        Vortex es el software de punto de venta donde ocurre toda la operación
+        diaria de tu negocio: cobras, facturas, descuentas inventario y cierras
+        caja sin abrir otro programa ni cambiar de pantalla.
       </p>
 
-      <a class="btn btn-outline btn-lg" href="#como-funciona">Ver cómo funciona</a>
+      <ul class="benefit-list">
+        <li>
+          <svg class="bi" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.5 10.5l4 4 7-8.5"/></svg>
+          Cobrar en efectivo, tarjeta o transferencia, y dividir la cuenta
+        </li>
+        <li>
+          <svg class="bi" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.5 10.5l4 4 7-8.5"/></svg>
+          Escanear códigos de barras o buscar productos por nombre
+        </li>
+        <li>
+          <svg class="bi" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.5 10.5l4 4 7-8.5"/></svg>
+          Aplicar descuentos, promociones y precios por tipo de cliente
+        </li>
+        <li>
+          <svg class="bi" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.5 10.5l4 4 7-8.5"/></svg>
+          Seguir vendiendo sin internet y sincronizar solo al volver la conexión
+        </li>
+        <li>
+          <svg class="bi" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.5 10.5l4 4 7-8.5"/></svg>
+          Emitir facturas y notas de crédito desde el mismo ticket de venta
+        </li>
+        <li>
+          <svg class="bi" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.5 10.5l4 4 7-8.5"/></svg>
+          Revisar cortes de caja, márgenes y ventas por cajero en tiempo real
+        </li>
+      </ul>
 
-      <p class="connect-note">Prueba de 14 días. Sin tarjeta de crédito.</p>
-
-      <div class="connect-compat">
-        <span class="compat-label">Incluye:</span>
-        <ul class="compat-list">
-          <li class="compat-tile" title="Ventas y cobro">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <path d="M6 3h12l1.5 18H4.5L6 3Z"/>
-              <path d="M9 7.5h6M9 11.5h6M9 15.5h3"/>
-            </svg>
-            <span class="sr-only">Ventas y cobro</span>
-          </li>
-          <li class="compat-tile" title="Inventario">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <path d="M3.5 7.5 12 3l8.5 4.5v9L12 21l-8.5-4.5v-9Z"/>
-              <path d="M3.5 7.5 12 12l8.5-4.5M12 12v9"/>
-            </svg>
-            <span class="sr-only">Inventario</span>
-          </li>
-          <li class="compat-tile" title="Facturación electrónica">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <path d="M13.5 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8.5L13.5 3Z"/>
-              <path d="M13 3.5V9h5.5M8.5 13h7M8.5 16.5h4"/>
-            </svg>
-            <span class="sr-only">Facturación electrónica</span>
-          </li>
-          <li class="compat-tile" title="Reportes">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <path d="M4 20V12M10 20V5M16 20v-6M22 20H2"/>
-            </svg>
-            <span class="sr-only">Reportes</span>
-          </li>
-          <li class="compat-tile" title="Clientes">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <circle cx="9.5" cy="8" r="3.5"/>
-              <path d="M3 20v-.8A5.2 5.2 0 0 1 8.2 14h2.6a5.2 5.2 0 0 1 5.2 5.2v.8"/>
-              <path d="M16.5 5.2a3.5 3.5 0 0 1 0 5.6M18 14.2a5.2 5.2 0 0 1 3 4.7v1.1"/>
-            </svg>
-            <span class="sr-only">Clientes</span>
-          </li>
-          <li class="compat-tile" title="Multi-sucursal">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <path d="M3.5 9.5 5 4h14l1.5 5.5"/>
-              <path d="M3.5 9.5a2.6 2.6 0 0 0 5 0 2.6 2.6 0 0 0 5 0 2.6 2.6 0 0 0 5 0 2.6 2.6 0 0 0 2 0"/>
-              <path d="M5 11.5V20h14v-8.5M10 20v-5h4v5"/>
-            </svg>
-            <span class="sr-only">Multi-sucursal</span>
-          </li>
-        </ul>
-      </div>
     </div>
 
-    <div class="connect-visual reveal" style="--d:.1s" aria-hidden="true">
-      <div class="cv-card">
-        <div class="cv-head">
-          <span class="cv-node cv-node--brand">V</span>
-          <span class="cv-head-text">
-            <strong>Vortex POS</strong>
-            <em>Caja 1 · Sucursal Centro</em>
-          </span>
-        </div>
-
-        <div class="cv-amount">
-          <span>Total del ticket</span>
-          <b>$227.36</b>
-        </div>
-
-        <div class="cv-status">
-          <strong><i></i>Vendiendo sin internet</strong>
-          <span>12 tickets en cola · se sincronizan solos</span>
-        </div>
-      </div>
+    <div class="connect-visual reveal" style="--d:.1s">
+      <img
+        src="assets/Dise%C3%B1o%20sin%20t%C3%ADtulo.png"
+        alt="Comerciante cobrando desde una tableta con el punto de venta Vortex: catálogo de productos, factura de venta y comprobante de venta realizada"
+        width="1350" height="1080" loading="lazy" decoding="async">
     </div>
   </div>
 </section>
 
-<!-- ============ FEATURES ============ -->
-<section class="section" id="funciones">
-  <div class="container">
-    <header class="section-head reveal">
-      <span class="eyebrow">Funciones</span>
-      <h2>Todo lo que tu mostrador necesita,<br>en una sola plataforma</h2>
-      <p>Deja de pegar con cinta adhesiva cinco herramientas distintas. Vortex conecta ventas, inventario, clientes y contabilidad en un mismo flujo.</p>
-    </header>
-
-    <div class="feature-grid">
-      <article class="card reveal">
-        <div class="card-icon i-violet">⚡</div>
-        <h3>Ventas en segundos</h3>
-        <p>Interfaz pensada para el mostrador: atajos de teclado, lector de código de barras y cobro con efectivo, tarjeta o transferencia en un solo paso.</p>
-      </article>
-
-      <article class="card reveal" style="--d:.06s">
-        <div class="card-icon i-cyan">📦</div>
-        <h3>Inventario en tiempo real</h3>
-        <p>El stock se descuenta al instante en todas tus sucursales. Alertas de mínimos, control de mermas y órdenes de compra automáticas.</p>
-      </article>
-
-      <article class="card reveal" style="--d:.12s">
-        <div class="card-icon i-amber">🏬</div>
-        <h3>Multi-sucursal</h3>
-        <p>Precios, promociones y permisos por punto de venta. Compara el desempeño de cada tienda desde un panel único.</p>
-      </article>
-
-      <article class="card reveal" style="--d:.06s">
-        <div class="card-icon i-pink">🧾</div>
-        <h3>Facturación electrónica</h3>
-        <p>Timbra CFDI 4.0 directo desde el ticket. Facturación global al cierre del día y envío automático por correo.</p>
-      </article>
-
-      <article class="card reveal" style="--d:.12s">
-        <div class="card-icon i-green">📊</div>
-        <h3>Reportes que sí se leen</h3>
-        <p>Márgenes por producto, horas pico, rendimiento por cajero y utilidad real. Exporta a Excel o conéctalo con tu contador.</p>
-      </article>
-
-      <article class="card reveal" style="--d:.18s">
-        <div class="card-icon i-blue">📴</div>
-        <h3>Modo offline</h3>
-        <p>Si se cae el internet, sigues vendiendo. Vortex guarda todo localmente y sincroniza en cuanto vuelve la conexión.</p>
-      </article>
+<!-- ============ INVENTARIO ============ -->
+<section class="section connect connect--flip" id="inventario">
+  <div class="container connect-inner">
+    <div class="connect-visual reveal">
+      <img
+        src="assets/ChatGPT%20Image%20Aug%2030,%202026,%2001_22_42%20AM.png"
+        alt="Panel de control de inventario de Vortex con existencias por producto, productos más vendidos, alertas de stock bajo y movimientos recientes"
+        width="1672" height="941" loading="lazy" decoding="async">
     </div>
-  </div>
-</section>
 
-<!-- ============ HOW IT WORKS ============ -->
-<section class="section section-alt" id="como-funciona">
-  <div class="container">
-    <header class="section-head reveal">
-      <span class="eyebrow">Cómo funciona</span>
-      <h2>De cero a tu primera venta<br>en menos de un día</h2>
-    </header>
+    <div class="connect-copy reveal" style="--d:.1s">
+      <span class="connect-badge">Control de inventario</span>
 
-    <ol class="steps">
-      <li class="step reveal">
-        <span class="step-num">01</span>
-        <h3>Crea tu cuenta</h3>
-        <p>Regístrate con tu correo y elige el giro de tu negocio. Vortex precarga catálogos, impuestos y categorías por ti.</p>
-      </li>
-      <li class="step reveal" style="--d:.08s">
-        <span class="step-num">02</span>
-        <h3>Carga tu catálogo</h3>
-        <p>Importa productos desde Excel o CSV, o escanea códigos con la cámara del celular. Migramos tus datos sin costo.</p>
-      </li>
-      <li class="step reveal" style="--d:.16s">
-        <span class="step-num">03</span>
-        <h3>Abre caja y vende</h3>
-        <p>Funciona en tablet, computadora o terminal. Conecta impresora, cajón de dinero y terminal bancaria en minutos.</p>
-      </li>
-    </ol>
+      <h2>Control de inventario que <span class="grad">siempre cuadra</span></h2>
 
-    <div class="hardware reveal">
-      <div class="hardware-copy">
-        <h3>Compatible con el hardware que ya tienes</h3>
-        <p>Impresoras térmicas ESC/POS, lectores de código de barras USB o Bluetooth, básculas, cajones de dinero y las principales terminales de pago del mercado.</p>
-        <a class="link-arrow" href="#demo">Ver lista de compatibilidad <span>→</span></a>
-      </div>
-      <ul class="hardware-list">
-        <li><span>🖨️</span> Impresoras térmicas 58 / 80 mm</li>
-        <li><span>🔍</span> Lectores 1D y QR</li>
-        <li><span>⚖️</span> Básculas con etiqueta de peso</li>
-        <li><span>💳</span> Terminales de pago integradas</li>
-        <li><span>💵</span> Cajones de dinero RJ11</li>
-        <li><span>📱</span> Android, iPad, Windows y navegador</li>
+      <p class="connect-lead">
+        El sistema de inventario de Vortex actualiza tus existencias con cada
+        venta: sabes qué tienes, en qué sucursal está y cuánto vale, sin contar
+        estantes a mano ni cuadrar hojas de cálculo.
+      </p>
+
+      <ul class="benefit-list">
+        <li>
+          <svg class="bi" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.5 10.5l4 4 7-8.5"/></svg>
+          Control de existencias en tiempo real, por sucursal y por almacén
+        </li>
+        <li>
+          <svg class="bi" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.5 10.5l4 4 7-8.5"/></svg>
+          Alertas automáticas de stock mínimo antes de quedarte sin producto
+        </li>
+        <li>
+          <svg class="bi" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.5 10.5l4 4 7-8.5"/></svg>
+          Entradas, salidas, ajustes y mermas, con historial por producto
+        </li>
+        <li>
+          <svg class="bi" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.5 10.5l4 4 7-8.5"/></svg>
+          Traspasos entre sucursales y órdenes de compra a proveedores
+        </li>
+        <li>
+          <svg class="bi" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.5 10.5l4 4 7-8.5"/></svg>
+          Atributos como talla, color o medida, con precio y stock por variante
+        </li>
+        <li>
+          <svg class="bi" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.5 10.5l4 4 7-8.5"/></svg>
+          Costo, margen y valor total de tu inventario, siempre actualizado
+        </li>
       </ul>
     </div>
   </div>
 </section>
 
-<!-- ============ PRICING ============ -->
-<section class="section" id="precios">
+<!-- ============ FUNCIONES ============ -->
+<section class="section funciones" id="funciones">
   <div class="container">
-    <header class="section-head reveal">
-      <span class="eyebrow">Precios</span>
-      <h2>Planes claros, sin comisiones<br>por venta</h2>
-      <p>Todos los planes incluyen actualizaciones, respaldos automáticos y soporte en español.</p>
+    <header class="feat-head reveal">
+      <h2>Punto de venta, inventario y facturación<br><em>en un solo sistema</em></h2>
+      <p>Vortex es el software de punto de venta para negocios de mostrador: cobras, controlas existencias en todas tus sucursales y emites comprobantes fiscales electrónicos desde la misma pantalla, sin exportar ni volver a capturar nada.</p>
     </header>
 
-    <div class="billing-toggle reveal" role="group" aria-label="Periodicidad de pago">
-      <button class="bt-btn is-active" data-cycle="mensual" aria-pressed="true">Mensual</button>
-      <button class="bt-btn" data-cycle="anual" aria-pressed="false">Anual <span class="save">&minus;20%</span></button>
+    <div class="feat-grid">
+      <article class="feat feat--7 reveal">
+        <div class="feat-media">
+          <img class="is-centered" src="assets/ChatGPT%20Image%20Sep%203,%202026,%2007_35_21%20PM.png"
+               alt="Terminal de punto de venta Vortex con impresora de tickets y lector de código de barras en el mostrador" loading="lazy">
+        </div>
+        <div class="feat-copy">
+          <h3>Cobra y factura en la misma pantalla</h3>
+          <p>Efectivo, tarjeta, transferencia o pago digital en una sola terminal. El ticket sale con su comprobante fiscal electrónico y se envía por correo sin abrir otro programa ni volver a capturar nada.</p>
+        </div>
+      </article>
+
+      <article class="feat feat--5 reveal" style="--d:.06s">
+        <div class="feat-media">
+          <img class="is-centered" src="assets/ChatGPT%20Image%20Sep%203,%202026,%2007_39_48%20PM.png"
+               alt="Lector de código de barras escaneando un producto en el anaquel de la bodega" loading="lazy">
+          <div class="feat-float" aria-hidden="true">
+            <span class="ff-check">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+            <div class="ff-body">
+              <b>Arroz premium 5 lb</b>
+              <i>SKU F-0007 · Almacén Central</i>
+            </div>
+            <span class="ff-stock">40 <em>→ 52</em></span>
+          </div>
+        </div>
+        <div class="feat-copy">
+          <h3>Del escáner al anaquel en segundos</h3>
+          <p>Escanea el código, completa el SKU y el producto queda listo para vender. Cambios por lote o por sucursal desde el celular, la computadora o la caja.</p>
+        </div>
+      </article>
+
+      <article class="feat feat--5 reveal" style="--d:.12s">
+        <div class="feat-media">
+          <img class="is-right" src="assets/ChatGPT%20Image%20Sep%203,%202026,%2007_47_44%20PM.png"
+               alt="Ficha de cliente en Vortex con historial de compras, puntos y una promoción personalizada durante el cobro" loading="lazy">
+        </div>
+        <div class="feat-copy">
+          <h3>Convierte visitas en clientes de siempre</h3>
+          <p>Cada compra se guarda en la ficha del cliente. Arma promociones, listas de precios y puntos de lealtad con lo que ya sabes de él.</p>
+        </div>
+      </article>
+
+      <article class="feat feat--7 reveal" style="--d:.18s">
+        <div class="feat-media">
+          <img class="is-centered" src="assets/ChatGPT%20Image%20Sep%203,%202026,%2008_04_59%20PM.png"
+               alt="Pantalla de sucursales de Vortex con tres tiendas activas y la opción de agregar una nueva" loading="lazy">
+        </div>
+        <div class="feat-copy">
+          <h3>Abre otra sucursal sin cambiar de sistema</h3>
+          <p>Cada tienda con sus precios, sus permisos y su caja, y un panel que las suma todas. Cuando abras la siguiente, entra al mismo Vortex: nada de migrar datos ni empezar de cero.</p>
+        </div>
+      </article>
     </div>
-
-    <div class="price-grid">
-      <article class="plan reveal">
-        <h3>Emprende</h3>
-        <p class="plan-desc">Para un solo punto de venta que está arrancando.</p>
-        <p class="plan-price"><span class="cur">$</span><b data-monthly="499" data-annual="399">499</b><span class="per">/mes</span></p>
-        <a class="btn btn-outline btn-block" href="#demo">Empezar gratis</a>
-        <ul class="plan-list">
-          <li>1 sucursal · 2 cajas</li>
-          <li>Productos ilimitados</li>
-          <li>Inventario básico</li>
-          <li>Reportes de ventas</li>
-          <li>Soporte por chat</li>
-        </ul>
-      </article>
-
-      <article class="plan plan-featured reveal" style="--d:.08s">
-        <span class="plan-tag">Más popular</span>
-        <h3>Crece</h3>
-        <p class="plan-desc">Para negocios con varias cajas y un catálogo grande.</p>
-        <p class="plan-price"><span class="cur">$</span><b data-monthly="999" data-annual="799">999</b><span class="per">/mes</span></p>
-        <a class="btn btn-primary btn-block" href="#demo">Probar 14 días</a>
-        <ul class="plan-list">
-          <li>Hasta 3 sucursales · cajas ilimitadas</li>
-          <li>Facturación electrónica CFDI 4.0</li>
-          <li>Órdenes de compra y proveedores</li>
-          <li>Promociones y programa de lealtad</li>
-          <li>Modo offline</li>
-          <li>Soporte prioritario</li>
-        </ul>
-      </article>
-
-      <article class="plan reveal" style="--d:.16s">
-        <h3>Escala</h3>
-        <p class="plan-desc">Para cadenas y operaciones multi-ciudad.</p>
-        <p class="plan-price"><span class="cur">$</span><b data-monthly="2199" data-annual="1759">2,199</b><span class="per">/mes</span></p>
-        <a class="btn btn-outline btn-block" href="#demo">Hablar con ventas</a>
-        <ul class="plan-list">
-          <li>Sucursales ilimitadas</li>
-          <li>API y webhooks</li>
-          <li>Roles y permisos avanzados</li>
-          <li>Panel corporativo consolidado</li>
-          <li>Integración contable y ERP</li>
-          <li>Gerente de cuenta dedicado</li>
-        </ul>
-      </article>
-    </div>
-
-    <p class="price-note reveal">Precios en MXN + IVA. ¿Más de 20 sucursales? <a href="#demo">Armemos un plan a tu medida.</a></p>
   </div>
 </section>
 
-<!-- ============ TESTIMONIALS ============ -->
-<section class="section section-alt" id="clientes">
+<!-- ============ DETALLES ============ -->
+<section class="section detalles" id="detalles">
   <div class="container">
-    <header class="section-head reveal">
-      <span class="eyebrow">Clientes</span>
-      <h2>Negocios que ya cerraron<br>el mes con Vortex</h2>
+    <header class="det-head reveal">
+      <h2>Lo que no se ve,<br><em>pero te ahorra horas</em></h2>
+      <a class="btn btn-primary btn-lg" href="#demo">Ver una demo</a>
     </header>
 
-    <div class="quote-grid">
-      <figure class="quote reveal">
-        <blockquote>Bajamos el tiempo de cobro a la mitad. En hora pico la fila ya no se hace, y eso se nota directo en las ventas del día.</blockquote>
-        <figcaption><span class="avatar av1">MG</span><span><b>Mariana G.</b><em>Café Norte · 3 sucursales</em></span></figcaption>
-      </figure>
+    <ul class="det-grid">
+      <li class="det reveal">
+        <div class="det-art" aria-hidden="true">
+          <div class="det-panel">
+            <p class="det-mini">Camisa manga larga</p>
+            <div class="det-chips"><span class="is-on">S</span><span>M</span><span class="is-on">L</span><span>XL</span></div>
+            <div class="det-chips det-chips--color">
+              <span class="is-on" style="--c:#4459E1"></span><span style="--c:#1a2340"></span>
+              <span style="--c:#e0413c"></span><span style="--c:#22c55e"></span>
+            </div>
+            <ul class="det-rows">
+              <li><b>L · Azul</b><i>SKU 0001-LA</i><em>12</em></li>
+              <li><b>L · Negro</b><i>SKU 0001-LN</i><em>4</em></li>
+            </ul>
+          </div>
+        </div>
+        <h3>Variantes de productos</h3>
+        <p>Talla, color, medida o presentación, cada una con su propio código, precio y existencia. Un solo producto en el catálogo, sin duplicados.</p>
+      </li>
 
-      <figure class="quote reveal" style="--d:.08s">
-        <blockquote>Por fin sé qué producto me deja dinero y cuál solo ocupa espacio. El reporte de márgenes cambió cómo compro inventario.</blockquote>
-        <figcaption><span class="avatar av2">RD</span><span><b>Ricardo D.</b><em>La Bodega · Abarrotes</em></span></figcaption>
-      </figure>
+      <li class="det reveal" style="--d:.06s">
+        <div class="det-art" aria-hidden="true">
+          <div class="det-panel">
+            <p class="det-mini">Ventas de la semana</p>
+            <p class="det-kpi">RD$90,463<em>+24.1%</em></p>
+            <div class="det-chart">
+              <span style="--h:44%"></span><span style="--h:62%"></span><span style="--h:50%"></span>
+              <span style="--h:78%"></span><span style="--h:58%"></span><span style="--h:94%"></span>
+              <span style="--h:72%"></span>
+            </div>
+          </div>
+        </div>
+        <h3>Reportes a detalle</h3>
+        <p>Ventas, márgenes, horas pico y desempeño por cajero. Los números que necesitas para decidir qué comprar y qué dejar de vender.</p>
+      </li>
 
-      <figure class="quote reveal" style="--d:.16s">
-        <blockquote>Se fue el internet un viernes completo y seguimos vendiendo sin enterarnos. Cuando volvió, todo se sincronizó solo.</blockquote>
-        <figcaption><span class="avatar av3">PL</span><span><b>Paola L.</b><em>Óptica Visión</em></span></figcaption>
-      </figure>
+      <li class="det reveal" style="--d:.12s">
+        <div class="det-art" aria-hidden="true">
+          <div class="det-panel">
+            <p class="det-mini">128 productos seleccionados</p>
+            <ul class="det-rows det-rows--check">
+              <li><span class="det-box is-on"></span><b>Arroz premium 5 lb</b><em>+10%</em></li>
+              <li><span class="det-box is-on"></span><b>Spray Abro rojo</b><em>+10%</em></li>
+              <li><span class="det-box is-on"></span><b>Metro Truper 8'</b><em>+10%</em></li>
+            </ul>
+            <div class="det-btn">Aplicar a todas las sucursales</div>
+          </div>
+        </div>
+        <h3>Cambios en lote</h3>
+        <p>Sube precios, cambia categorías o ajusta existencias de cientos de productos a la vez, y que todas las sucursales queden iguales.</p>
+      </li>
+
+      <li class="det reveal" style="--d:.06s">
+        <div class="det-art det-art--phone" aria-hidden="true">
+          <img class="det-shot" src="assets/ChatGPT%20Image%20Sep%203,%202026,%2008_09_34%20PM.png"
+               alt="" loading="lazy" width="877" height="1746">
+        </div>
+        <h3>Entra desde donde estés</h3>
+        <p>Revisa las ventas del día, cambia un precio o das de alta un producto desde el celular, sin tener que ir a la tienda.</p>
+      </li>
+
+      <li class="det reveal" style="--d:.12s">
+        <div class="det-art" aria-hidden="true">
+          <div class="det-panel det-panel--offline">
+            <div class="do-top">
+              <span class="det-badge">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+                  <path d="M3.5 8.5a14 14 0 0 1 5-3M12 5.2c2.9 0 5.7 1 8 3M6.8 12.2a9 9 0 0 1 3-1.7M14.5 10.7a9 9 0 0 1 2.8 1.6M10 15.6a4 4 0 0 1 4.1 0M12 19h.01M3 3l18 18"/>
+                </svg>
+                Sin conexión
+              </span>
+              <span class="do-count">3 en cola</span>
+            </div>
+
+            <p class="det-off">Sigues cobrando</p>
+
+            <ul class="do-queue">
+              <li><span class="do-tick"></span><b>Ticket 0001-0042</b><i>10:42</i><em>RD$1,240</em></li>
+              <li><span class="do-tick"></span><b>Ticket 0001-0041</b><i>10:38</i><em>RD$860</em></li>
+              <li><span class="do-tick"></span><b>Ticket 0001-0040</b><i>10:31</i><em>RD$2,190</em></li>
+            </ul>
+
+            <div class="do-bar"><span></span></div>
+            <p class="do-note">Se sincronizan solas en cuanto vuelve la señal</p>
+          </div>
+        </div>
+        <h3>Servicio sin interrupciones</h3>
+        <p>Si se cae el internet, la caja sigue abierta. Vortex guarda cada venta en el equipo y sincroniza todo en cuanto vuelve la señal.</p>
+      </li>
+
+      <li class="det reveal" style="--d:.18s">
+        <div class="det-art" aria-hidden="true">
+          <div class="det-chat">
+            <div class="dc-head">
+              <span class="dc-av">V</span>
+              <div>
+                <b>Soporte Vortex</b>
+                <i><span class="dc-dot"></span>En línea</i>
+              </div>
+            </div>
+            <p class="dc-msg dc-msg--me">¿Cómo hago una devolución?<em>10:42</em></p>
+            <p class="dc-msg dc-msg--them">Abres la factura y le das a Devolver 👌<em>10:43</em></p>
+            <p class="dc-msg dc-msg--them dc-typing"><i></i><i></i><i></i></p>
+          </div>
+        </div>
+        <h3>Soporte que sí contesta</h3>
+        <p>Gente que entiende un sábado con la tienda llena. Chat en español, con respuesta el mismo día y prioridad 24 horas en los planes Crece y Escala.</p>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============ GIROS ============ -->
+<section class="section giros" id="giros">
+  <div class="container">
+    <header class="giros-head reveal">
+      <div>
+        <span class="eyebrow">Para tu giro</span>
+        <h2>Un mostrador es distinto<br>en cada negocio</h2>
+      </div>
+      <p>Vortex llega con catálogo, impuestos y flujo de cobro precargados según lo que vendes. Cambias de giro o abres otro negocio y lo reconfiguras en minutos.</p>
+    </header>
+
+    <ul class="giro-grid">
+      <li class="giro reveal">
+        <span class="giro-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M4 8h16l-1.6 10.2a2 2 0 0 1-2 1.8H7.6a2 2 0 0 1-2-1.8L4 8Z"/><path d="M8.5 8 12 3l3.5 5"/><path d="M9.5 12v4M14.5 12v4"/>
+          </svg>
+        </span>
+        <h3>Colmados y minimarkets</h3>
+        <p>Cobro rápido por código de barras y control de mermas diario.</p>
+      </li>
+
+      <li class="giro reveal" style="--d:.04s">
+        <span class="giro-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M9 3 5 5 3.5 9l3 1.2V21h11V10.2l3-1.2L19 5l-4-2a3 3 0 0 1-6 0Z"/>
+          </svg>
+        </span>
+        <h3>Ropa y boutique</h3>
+        <p>Variantes de talla y color, con stock propio para cada una.</p>
+      </li>
+
+      <li class="giro reveal" style="--d:.08s">
+        <span class="giro-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M7 3v6a2 2 0 0 0 4 0V3M9 11v10"/><path d="M17 3c-1.5 1.6-2 3.5-2 5.5S15.8 12 17 12v9"/>
+          </svg>
+        </span>
+        <h3>Restaurante y café</h3>
+        <p>Comandas por mesa, propinas y cuentas divididas sin enredos.</p>
+      </li>
+
+      <li class="giro reveal" style="--d:.12s">
+        <span class="giro-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M15.6 4.6a4.5 4.5 0 0 0-5.9 5.9L4 16.2 7.8 20l5.7-5.7a4.5 4.5 0 0 0 5.9-5.9l-2.6 2.6-2.5-.4-.4-2.5 2.7-2.5Z"/>
+          </svg>
+        </span>
+        <h3>Ferretería</h3>
+        <p>Venta por pieza, metro o kilo, con precios por mayoreo.</p>
+      </li>
+
+      <li class="giro reveal" style="--d:.04s">
+        <span class="giro-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <rect x="4" y="4" width="16" height="16" rx="4"/><path d="M12 8.5v7M8.5 12h7"/>
+          </svg>
+        </span>
+        <h3>Farmacia</h3>
+        <p>Caducidades, lotes y alertas antes de que el producto venza.</p>
+      </li>
+
+      <li class="giro reveal" style="--d:.08s">
+        <span class="giro-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="m5 19 1-4L16.5 4.5a2.1 2.1 0 0 1 3 3L9 18l-4 1Z"/><path d="m14.5 6.5 3 3"/>
+          </svg>
+        </span>
+        <h3>Papelería</h3>
+        <p>Miles de claves distintas, buscables por nombre o código.</p>
+      </li>
+
+      <li class="giro reveal" style="--d:.12s">
+        <span class="giro-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M10 3h4v3.2c0 .8.3 1.5.8 2.1l.9 1.1c.5.6.8 1.4.8 2.2V19a2 2 0 0 1-2 2h-5a2 2 0 0 1-2-2v-7.4c0-.8.3-1.6.8-2.2l.9-1.1c.5-.6.8-1.3.8-2.1V3Z"/><path d="M7.5 13h9"/>
+          </svg>
+        </span>
+        <h3>Licorería</h3>
+        <p>Control de envase, promociones por volumen y horario de venta.</p>
+      </li>
+
+      <li class="giro giro--cta reveal" style="--d:.16s">
+        <h3>¿Tu giro no está aquí?</h3>
+        <p>Vortex se configura para cualquier mostrador. Cuéntanos qué vendes y lo dejamos listo.</p>
+        <a href="#demo">Hablemos de tu negocio
+          <svg viewBox="0 0 15 13" fill="none" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6" d="m10.083 11.417 4-5.334m0 0-4-5.333m4 5.333H.75"/></svg>
+        </a>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============ COMPARE ============ -->
+<section class="section compare">
+  <div class="container">
+    <h2 class="compare-title reveal">Una mejor forma <span class="grad">de vender</span></h2>
+
+    <div class="compare-grid reveal" style="--d:.08s">
+      <article class="cmp-card cmp-card--before">
+        <div class="cmp-media">
+          <img src="assets/sinvortex.png"
+               alt="Comerciante agobiada anotando ventas a mano en un cuaderno, rodeada de tickets de papel sobre el mostrador"
+               width="1448" height="1086" loading="lazy" decoding="async">
+        </div>
+        <div class="cmp-body">
+          <h3>Sin Vortex</h3>
+          <ul class="cmp-list">
+            <li>
+              <svg class="ci ci-x" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M5 5l10 10M15 5L5 15"/></svg>
+              Las ventas se anotan en un cuaderno y algunas se pierden
+            </li>
+            <li>
+              <svg class="ci ci-x" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M5 5l10 10M15 5L5 15"/></svg>
+              El inventario nunca cuadra con lo que hay en la estantería
+            </li>
+            <li>
+              <svg class="ci ci-x" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M5 5l10 10M15 5L5 15"/></svg>
+              Facturar significa volver a capturar todo en otro programa
+            </li>
+            <li>
+              <svg class="ci ci-x" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M5 5l10 10M15 5L5 15"/></svg>
+              No sabes qué producto deja dinero y cuál te lo está quitando
+            </li>
+            <li>
+              <svg class="ci ci-x" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M5 5l10 10M15 5L5 15"/></svg>
+              Si se cae el internet, se para la caja
+            </li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="cmp-card cmp-card--after">
+        <div class="cmp-media">
+          <img src="assets/convortex.png"
+               alt="Cajera cobrando a una clienta en una terminal de punto de venta y entregando el ticket impreso"
+               width="1448" height="1086" loading="lazy" decoding="async">
+        </div>
+        <div class="cmp-body">
+          <h3>Con Vortex</h3>
+          <ul class="cmp-list">
+            <li>
+              <svg class="ci ci-check" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.5 10.5l4 4 7-8.5"/></svg>
+              Cada cobro queda registrado en el momento en que ocurre
+            </li>
+            <li>
+              <svg class="ci ci-check" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.5 10.5l4 4 7-8.5"/></svg>
+              El stock se descuenta solo, en todas tus cajas y sucursales
+            </li>
+            <li>
+              <svg class="ci ci-check" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.5 10.5l4 4 7-8.5"/></svg>
+              La factura sale del mismo ticket, sin recapturar nada
+            </li>
+            <li>
+              <svg class="ci ci-check" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.5 10.5l4 4 7-8.5"/></svg>
+              Ves el margen real por producto, por hora y por cajero
+            </li>
+            <li>
+              <svg class="ci ci-check" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.5 10.5l4 4 7-8.5"/></svg>
+              Sigues cobrando sin conexión y todo se sincroniza al volver
+            </li>
+          </ul>
+        </div>
+      </article>
     </div>
   </div>
 </section>
+
 
 <!-- ============ FAQ ============ -->
 <section class="section" id="faq">
-  <div class="container container-narrow">
-    <header class="section-head reveal">
-      <span class="eyebrow">Preguntas frecuentes</span>
-      <h2>Lo que todos nos preguntan</h2>
+  <div class="container">
+    <div class="faq-layout">
+      <aside class="faq-aside reveal">
+        <span class="eyebrow">Preguntas frecuentes</span>
+        <h2>Lo que todos nos preguntan</h2>
+        <p class="faq-sub">Tus dudas, resueltas.</p>
+        <p class="faq-support faq-support--desk">¿No encuentras lo que buscas? Escríbele a nuestro <a href="#demo">equipo de soporte</a>.</p>
+      </aside>
+
+      <div class="faq" id="faqAccordion">
+        <div class="faq-item reveal">
+          <h3 class="faq-heading">
+            <button class="faq-trigger" type="button" id="faq-t1" aria-expanded="false" aria-controls="faq-p1">
+              <span>¿Necesito comprar hardware nuevo?</span>
+              <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m6 9 6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+          </h3>
+          <div class="faq-panel" id="faq-p1" role="region" aria-labelledby="faq-t1">
+            <div class="faq-panel-inner"><p>No. Vortex corre en el navegador y en apps para Android, iPad y Windows. Si ya tienes impresora térmica, lector de códigos o cajón de dinero, lo más probable es que sean compatibles.</p></div>
+          </div>
+        </div>
+        <div class="faq-item reveal">
+          <h3 class="faq-heading">
+            <button class="faq-trigger" type="button" id="faq-t2" aria-expanded="false" aria-controls="faq-p2">
+              <span>¿Qué pasa si se cae el internet?</span>
+              <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m6 9 6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+          </h3>
+          <div class="faq-panel" id="faq-p2" role="region" aria-labelledby="faq-t2">
+            <div class="faq-panel-inner"><p>Sigues vendiendo. El modo offline guarda cada ticket en el dispositivo y sincroniza automáticamente con la nube cuando vuelve la conexión, sin duplicados ni ventas perdidas.</p></div>
+          </div>
+        </div>
+        <div class="faq-item reveal">
+          <h3 class="faq-heading">
+            <button class="faq-trigger" type="button" id="faq-t3" aria-expanded="false" aria-controls="faq-p3">
+              <span>¿Cobran comisión por cada venta?</span>
+              <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m6 9 6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+          </h3>
+          <div class="faq-panel" id="faq-p3" role="region" aria-labelledby="faq-t3">
+            <div class="faq-panel-inner"><p>Nunca. Pagas únicamente tu suscripción mensual o anual. Las comisiones bancarias las define tu terminal de pago, no nosotros.</p></div>
+          </div>
+        </div>
+        <div class="faq-item reveal">
+          <h3 class="faq-heading">
+            <button class="faq-trigger" type="button" id="faq-t4" aria-expanded="false" aria-controls="faq-p4">
+              <span>¿Pueden migrar mi información actual?</span>
+              <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m6 9 6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+          </h3>
+          <div class="faq-panel" id="faq-p4" role="region" aria-labelledby="faq-t4">
+            <div class="faq-panel-inner"><p>Sí, sin costo en todos los planes. Nos envías tu catálogo en Excel, CSV o el respaldo de tu sistema anterior y nuestro equipo lo deja listo antes de que abras caja.</p></div>
+          </div>
+        </div>
+        <div class="faq-item reveal">
+          <h3 class="faq-heading">
+            <button class="faq-trigger" type="button" id="faq-t5" aria-expanded="false" aria-controls="faq-p5">
+              <span>¿Incluye facturación electrónica?</span>
+              <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m6 9 6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+          </h3>
+          <div class="faq-panel" id="faq-p5" role="region" aria-labelledby="faq-t5">
+            <div class="faq-panel-inner"><p>Los planes Crece y Escala emiten comprobantes fiscales electrónicos (e-CF) directamente desde el ticket, administran tus secuencias de NCF y envían la factura al cliente por correo de forma automática.</p></div>
+          </div>
+        </div>
+        <div class="faq-item reveal">
+          <h3 class="faq-heading">
+            <button class="faq-trigger" type="button" id="faq-t6" aria-expanded="false" aria-controls="faq-p6">
+              <span>¿Puedo cancelar cuando quiera?</span>
+              <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m6 9 6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+          </h3>
+          <div class="faq-panel" id="faq-p6" role="region" aria-labelledby="faq-t6">
+            <div class="faq-panel-inner"><p>Sí. No hay contratos forzosos ni penalizaciones. Si cancelas, puedes exportar todos tus datos en cualquier momento.</p></div>
+          </div>
+        </div>
+      </div>
+
+      <p class="faq-support faq-support--mobile reveal">¿No encuentras lo que buscas? Escríbele a nuestro <a href="#demo">equipo de soporte</a>.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ RECURSOS ============ -->
+<section class="section resources" id="recursos">
+  <div class="container">
+    <header class="res-head reveal">
+      <span class="eyebrow res-label">
+        <span>Recursos</span>
+      </span>
+      <h2>Todo lo que necesitas para <em>arrancar con Vortex</em></h2>
     </header>
 
-    <div class="faq">
-      <details class="faq-item reveal">
-        <summary>¿Necesito comprar hardware nuevo?</summary>
-        <div class="faq-body"><p>No. Vortex corre en el navegador y en apps para Android, iPad y Windows. Si ya tienes impresora térmica, lector de códigos o cajón de dinero, lo más probable es que sean compatibles.</p></div>
-      </details>
+    <div class="res-grid">
+      <!-- Documentación -->
+      <a class="res-card res-card--wide reveal" href="#demo"
+         style="--bg:#eef1ff; --text:#1a2340; --accent:#4459E1; --on-accent:#fff">
+        <div class="res-art res-art--search" aria-hidden="true">
+          <div class="res-blueprint"></div>
+          <div class="res-searchbar">
+            <svg viewBox="0 0 24 24" fill="none">
+              <circle cx="10.5" cy="10.5" r="6.5" stroke="currentColor" stroke-width="2.2"/>
+              <path d="m15.5 15.5 4.5 4.5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/>
+            </svg>
+            <span id="resTyped" data-words="¿Cómo abro mi caja?|¿Cómo emito una factura?|¿Cómo importo mi catálogo?|¿Cómo cierro el turno?">¿Cómo abro mi caja?</span>
+            <i class="res-caret"></i>
+          </div>
+        </div>
+        <div class="res-foot">
+          <div class="res-copy">
+            <p class="res-kicker">Guías paso a paso</p>
+            <h3 class="res-title">Documentación</h3>
+          </div>
+          <span class="res-btn">ir a la documentación</span>
+          <span class="res-arrow">
+            <svg viewBox="0 0 15 13" fill="none"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="m10.083 11.417 4-5.334m0 0-4-5.333m4 5.333H.75"/></svg>
+          </span>
+        </div>
+      </a>
 
-      <details class="faq-item reveal">
-        <summary>¿Qué pasa si se cae el internet?</summary>
-        <div class="faq-body"><p>Sigues vendiendo. El modo offline guarda cada ticket en el dispositivo y sincroniza automáticamente con la nube cuando vuelve la conexión, sin duplicados ni ventas perdidas.</p></div>
-      </details>
+      <!-- Videotutoriales -->
+      <a class="res-card res-card--dark reveal" href="#demo" style="--d:.06s;
+         --bg:#141b45; --text:#ffffff; --accent:#4459E1; --on-accent:#fff">
+        <div class="res-art res-art--video" aria-hidden="true">
+          <div class="res-screen">
+            <span></span><span></span><span></span><span></span>
+          </div>
+          <div class="res-play">
+            <svg viewBox="0 0 12 14" fill="currentColor"><path d="M11 6.134a1 1 0 0 1 0 1.732L1.5 13.36A1 1 0 0 1 0 12.495V1.505A1 1 0 0 1 1.5.64z"/></svg>
+          </div>
+        </div>
+        <div class="res-foot">
+          <div class="res-copy">
+            <p class="res-kicker">Todos los cómo</p>
+            <h3 class="res-title">Videotutoriales</h3>
+          </div>
+          <span class="res-btn">ver tutoriales</span>
+          <span class="res-arrow">
+            <svg viewBox="0 0 15 13" fill="none"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="m10.083 11.417 4-5.334m0 0-4-5.333m4 5.333H.75"/></svg>
+          </span>
+        </div>
+      </a>
 
-      <details class="faq-item reveal">
-        <summary>¿Cobran comisión por cada venta?</summary>
-        <div class="faq-body"><p>Nunca. Pagas únicamente tu suscripción mensual o anual. Las comisiones bancarias las define tu terminal de pago, no nosotros.</p></div>
-      </details>
+      <!-- Base de conocimiento -->
+      <a class="res-card res-card--flip reveal" href="#demo" style="--d:.12s;
+         --bg:#fdeff6; --text:#1a2340; --accent:#4459E1; --on-accent:#fff">
+        <div class="res-foot">
+          <div class="res-copy">
+            <p class="res-kicker">Base de conocimiento para retail</p>
+            <h3 class="res-title">Guía de inventario</h3>
+          </div>
+          <span class="res-arrow res-arrow--mobile">
+            <svg viewBox="0 0 15 13" fill="none"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="m10.083 11.417 4-5.334m0 0-4-5.333m4 5.333H.75"/></svg>
+          </span>
+        </div>
+        <div class="res-art res-art--docs" aria-hidden="true">
+          <img class="res-shot" src="assets/ChatGPT%20Image%20Sep%202,%202026,%2001_41_00%20PM.png"
+               alt="" loading="lazy" width="2244" height="701">
+          <span class="res-btn res-btn--float">todas las guías</span>
+        </div>
+      </a>
 
-      <details class="faq-item reveal">
-        <summary>¿Pueden migrar mi información actual?</summary>
-        <div class="faq-body"><p>Sí, sin costo en todos los planes. Nos envías tu catálogo en Excel, CSV o el respaldo de tu sistema anterior y nuestro equipo lo deja listo antes de que abras caja.</p></div>
-      </details>
-
-      <details class="faq-item reveal">
-        <summary>¿Incluye facturación electrónica?</summary>
-        <div class="faq-body"><p>Los planes Crece y Escala timbran CFDI 4.0 directamente desde el ticket, incluyen facturación global al cierre del día y envío automático por correo al cliente.</p></div>
-      </details>
-
-      <details class="faq-item reveal">
-        <summary>¿Puedo cancelar cuando quiera?</summary>
-        <div class="faq-body"><p>Sí. No hay contratos forzosos ni penalizaciones. Si cancelas, puedes exportar todos tus datos en cualquier momento.</p></div>
-      </details>
+      <!-- Descargables -->
+      <a class="res-card res-card--wide res-card--solid reveal" href="#demo" style="--d:.18s;
+         --bg:#4459E1; --text:#ffffff; --accent:#ffffff; --on-accent:#2A3CBD">
+        <div class="res-art res-art--kit" aria-hidden="true">
+          <svg viewBox="0 0 800 220" fill="none" preserveAspectRatio="xMidYMax slice">
+            <g stroke="currentColor" stroke-width="2" opacity=".55">
+              <!-- caja / inventario -->
+              <rect x="40" y="70" width="140" height="120" rx="6"/>
+              <path d="M40 104h140M96 70v34"/>
+              <!-- etiqueta con código de barras -->
+              <rect x="230" y="60" width="150" height="130" rx="10"/>
+              <path d="M252 92v66M264 92v66M276 92v46M288 92v66M300 92v40M312 92v66M324 92v56M336 92v66M348 92v44M360 92v66"/>
+              <!-- impresora de tickets -->
+              <rect x="430" y="96" width="150" height="94" rx="8"/>
+              <path d="M462 96V44h86v52M462 130h86M430 152h150"/>
+              <!-- hoja de reporte -->
+              <rect x="630" y="52" width="130" height="138" rx="8"/>
+              <path d="M652 84h86M652 108h86M652 132h60M652 156h40"/>
+            </g>
+          </svg>
+        </div>
+        <div class="res-foot">
+          <div class="res-copy">
+            <p class="res-kicker">Plantillas de catálogo, etiquetas y checklists. Gratis.</p>
+            <h3 class="res-title">Kit para tu tienda</h3>
+          </div>
+          <span class="res-btn">descargar ahora</span>
+          <span class="res-arrow">
+            <svg viewBox="0 0 15 13" fill="none"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="m10.083 11.417 4-5.334m0 0-4-5.333m4 5.333H.75"/></svg>
+          </span>
+        </div>
+      </a>
     </div>
   </div>
 </section>
@@ -520,22 +929,27 @@
 <section class="cta" id="demo">
   <div class="container">
     <div class="cta-box reveal">
-      <div class="cta-glow" aria-hidden="true"></div>
-      <h2>Tu próxima venta puede ser<br>mucho más rápida</h2>
-      <p>Prueba Vortex 14 días gratis. Sin tarjeta, sin instalación, sin compromiso.</p>
+      <div class="cta-copy">
+        <h2>Empieza hoy<br>con Vortex</h2>
+        <p>Prueba Vortex 14 días gratis, con acceso a todas las funciones. Sin tarjeta y cancelas cuando quieras.</p>
 
-      <form class="cta-form" id="ctaForm" novalidate>
-        <label class="sr-only" for="email">Correo electrónico</label>
-        <input type="email" id="email" name="email" placeholder="tu@negocio.com" autocomplete="email" required>
-        <button class="btn btn-primary" type="submit">Crear mi cuenta</button>
-      </form>
-      <p class="cta-msg" id="ctaMsg" role="status" aria-live="polite"></p>
+        <form class="cta-form" id="ctaForm" novalidate>
+          <label class="sr-only" for="email">Correo electrónico</label>
+          <input type="email" id="email" name="email" placeholder="tu@negocio.com" autocomplete="email" required>
+          <button class="cta-submit" type="submit">
+            Empezar prueba gratis
+            <svg viewBox="0 0 15 13" fill="none" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6" d="m10.083 11.417 4-5.334m0 0-4-5.333m4 5.333H.75"/></svg>
+          </button>
+        </form>
+        <p class="cta-msg" id="ctaMsg" role="status" aria-live="polite"></p>
+      </div>
 
-      <ul class="cta-checks">
-        <li>Configuración guiada</li>
-        <li>Migración de datos gratis</li>
-        <li>Soporte en español</li>
-      </ul>
+      <!-- Captura real del panel de reportes, recortada por el marco -->
+      <div class="cta-shot" aria-hidden="true">
+        <div class="cta-app">
+          <img src="assets/Reportes%20ventas.png" alt="" loading="lazy" width="1440" height="1497">
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -555,14 +969,13 @@
     <nav class="footer-col" aria-label="Producto">
       <h4>Producto</h4>
       <a href="#funciones">Funciones</a>
-      <a href="#precios">Precios</a>
-      <a href="#como-funciona">Hardware</a>
+      <a href="planes.html">Planes</a>
+      <a href="recursos.html">Recursos</a>
       <a href="#demo">Prueba gratis</a>
     </nav>
 
     <nav class="footer-col" aria-label="Empresa">
       <h4>Empresa</h4>
-      <a href="#clientes">Clientes</a>
       <a href="#faq">Preguntas</a>
       <a href="#top">Blog</a>
       <a href="#top">Trabaja con nosotros</a>
@@ -573,7 +986,7 @@
       <a href="#top">Centro de ayuda</a>
       <a href="#top">Estado del servicio</a>
       <a href="#top">Documentación API</a>
-      <a href="#top">Contacto</a>
+      <a href="contacto.html">Contacto</a>
     </nav>
   </div>
 
