@@ -201,80 +201,6 @@
     counters.forEach(animateCounter);
   }
 
-  /* ---------- Cambio de periodicidad en precios ----------
-     El interruptor mueve una pastilla con transform y las cifras se
-     interpolan, en lugar de saltar de un valor al otro. */
-  var ppSwitch = document.getElementById('ppSwitch');
-
-  if (ppSwitch) {
-    var ppThumb = ppSwitch.querySelector('.pp-thumb');
-    var ppOptions = Array.prototype.slice.call(ppSwitch.querySelectorAll('.pp-opt'));
-    var ppPrices = document.querySelectorAll('.pp-price b');
-    var ppPer = document.querySelectorAll('.pp-price .per');
-
-    /* La pastilla (left:0) y los botones miden su offsetLeft desde la misma
-       caja de relleno del interruptor, así que el desplazamiento es el
-       offsetLeft tal cual. Se usan medidas de layout y no rectángulos para
-       que un zoom o un transform en un ancestro no descuadre la pastilla. */
-    var moveThumb = function () {
-      var active = ppSwitch.querySelector('.pp-opt.is-active');
-
-      ppThumb.style.width = active.offsetWidth + 'px';
-      ppThumb.style.transform = 'translateX(' + active.offsetLeft + 'px)';
-    };
-
-    var tweenPrice = function (el, to) {
-      var from = parseInt(el.textContent.replace(/\D/g, ''), 10) || 0;
-
-      if (reduceMotion || from === to) {
-        el.textContent = formatNumber(to);
-        return;
-      }
-
-      var duration = 450;
-      var start = performance.now();
-
-      requestAnimationFrame(function tick(now) {
-        var p = Math.min((now - start) / duration, 1);
-        var eased = 1 - Math.pow(1 - p, 3); // easeOutCubic
-        el.textContent = formatNumber(Math.round(from + (to - from) * eased));
-        if (p < 1) requestAnimationFrame(tick);
-      });
-    };
-
-    ppOptions.forEach(function (opt) {
-      opt.addEventListener('click', function () {
-        var yearly = opt.dataset.cycle === 'anual';
-
-        ppOptions.forEach(function (other) {
-          var active = other === opt;
-          other.classList.toggle('is-active', active);
-          other.setAttribute('aria-pressed', String(active));
-        });
-
-        moveThumb();
-
-        ppPrices.forEach(function (el) {
-          tweenPrice(el, parseInt(yearly ? el.dataset.yearly : el.dataset.monthly, 10));
-        });
-        ppPer.forEach(function (el) { el.textContent = yearly ? '/año' : '/mes'; });
-      });
-    });
-
-    /* La pastilla se coloca con las medidas del momento; cuando entra la
-       fuente web los botones cambian de ancho, así que se observa el tamaño
-       del interruptor para recolocarla (fonts.ready llega demasiado pronto
-       en algunos navegadores). */
-    moveThumb();
-
-    if (typeof ResizeObserver === 'function') {
-      new ResizeObserver(moveThumb).observe(ppSwitch);
-    } else {
-      if (document.fonts && document.fonts.ready) document.fonts.ready.then(moveThumb);
-      window.addEventListener('resize', moveThumb);
-    }
-  }
-
   /* ---------- Carrusel lateral (coverflow) ---------- */
   var csViewport = document.getElementById('csViewport');
 
@@ -388,7 +314,7 @@
 
       // Aquí conectarías tu backend o servicio de registro.
       input.classList.remove('is-error');
-      msg.textContent = '¡Listo! Te enviamos el acceso a tu prueba de 14 días a ' + value + '.';
+      msg.textContent = '¡Listo! Te enviamos el acceso a tu prueba de 1 mes a ' + value + '.';
       msg.className = 'cta-msg ok';
       form.reset();
     });

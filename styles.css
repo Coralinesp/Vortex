@@ -1117,6 +1117,7 @@ h3 { font-size: 1.15rem; font-weight: 700; letter-spacing: -.015em; }
 .pp-price b { font-size: 2.5rem; font-weight: 800; letter-spacing: -.04em; line-height: 1; }
 .pp-price .per { margin-left: 6px; font-size: .95rem; color: var(--text-dim); }
 .pp-card--popular .pp-price .per { color: rgba(255,255,255,.7); }
+.pp-price--quote b { font-size: 1.9rem; }
 
 .pp-name { margin-top: 18px; font-size: 1.85rem; font-weight: 800; letter-spacing: -.03em; }
 /* Dos líneas reservadas: así la divisoria cae a la misma altura en las tres. */
@@ -1516,6 +1517,7 @@ h3 { font-size: 1.15rem; font-weight: 700; letter-spacing: -.015em; }
 .cmp-yes svg { width: 13px; height: 13px; }
 .cmp-no { width: 24px; height: 24px; color: var(--text-dim); opacity: .55; }
 .cmp-no svg { width: 14px; height: 14px; }
+.cmp-val { font-size: .88rem; font-weight: 700; color: var(--text); }
 
 .cmp-note { text-align: center; margin-top: 28px; color: var(--text-dim); font-size: .89rem; }
 .cmp-note a { color: var(--violet); font-weight: 600; }
