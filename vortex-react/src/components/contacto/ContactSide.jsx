@@ -1,6 +1,10 @@
 import { Link } from 'react-router-dom';
 import Reveal from '../common/Reveal.jsx';
 
+const WHATSAPP_MSG = encodeURIComponent('Hola, quiero agendar una demo de Vortex.');
+const WHATSAPP_1 = `https://wa.me/18099735660?text=${WHATSAPP_MSG}`;
+const WHATSAPP_2 = `https://wa.me/18098765665?text=${WHATSAPP_MSG}`;
+
 export default function ContactSide() {
   return (
     <aside className="ct-side">
@@ -16,7 +20,14 @@ export default function ContactSide() {
             <b>WhatsApp</b>
             <i>Lo más rápido, de 8:00 a 6:00</i>
           </div>
-          <a href="#form">(809) 000-0000</a>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '2px', alignItems: 'flex-end' }}>
+            <a href={WHATSAPP_1} target="_blank" rel="noopener noreferrer">
+              (809) 973-5660
+            </a>
+            <a href={WHATSAPP_2} target="_blank" rel="noopener noreferrer">
+              (809) 876-5665
+            </a>
+          </div>
         </li>
         <li>
           <span className="ct-ico">
@@ -29,7 +40,7 @@ export default function ContactSide() {
             <b>Correo</b>
             <i>Respuesta el mismo día hábil</i>
           </div>
-          <a href="#form">hola@vortex.do</a>
+          <a href="mailto:info@vortex.com">info@vortex.com</a>
         </li>
         <li>
           <span className="ct-ico">
@@ -41,27 +52,14 @@ export default function ContactSide() {
             <b>Teléfono</b>
             <i>Lunes a viernes, 8:00 a 6:00</i>
           </div>
-          <a href="#form">(809) 000-0000</a>
-        </li>
-        <li>
-          <span className="ct-ico">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-              <path d="M12 21s7-5.6 7-11a7 7 0 1 0-14 0c0 5.4 7 11 7 11Z" />
-              <circle cx="12" cy="10" r="2.6" />
-            </svg>
-          </span>
-          <div>
-            <b>Oficina</b>
-            <i>Santo Domingo, República Dominicana</i>
-          </div>
-          <a href="#form">Agenda una visita</a>
+          <a href="tel:+18099735660">(809) 973-5660</a>
         </li>
       </Reveal>
 
       <Reveal as="div" className="ct-demo">
         <h3>¿Prefieres verlo funcionando?</h3>
         <p>Te mostramos Vortex con tus productos y tus precios en una llamada de 20 minutos.</p>
-        <a className="ct-demo-btn" href="#form">
+        <a className="ct-demo-btn" href={WHATSAPP_1} target="_blank" rel="noopener noreferrer">
           Agendar una demo
           <svg viewBox="0 0 15 13" fill="none" aria-hidden="true">
             <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.6" d="m10.083 11.417 4-5.334m0 0-4-5.333m4 5.333H.75" />

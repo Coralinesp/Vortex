@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { useSearchParams } from 'react-router-dom';
 import {
   fetchSuscripciones,
   registrarEmpresa,
@@ -8,8 +9,7 @@ import {
 } from '../../services/registerApi.js';
 import { PASSWORD_RULES, formatCedulaRncInput, formatPhoneInput, parsePlanFeatures } from '../../utils/registroHelpers.js';
 
-const TOTAL_PASOS = 4; // Empresa, Usuario, Suscripción, Pago
-const STEP_LABELS = { 1: 'Empresa', 2: 'Usuario', 3: 'Suscripción', 4: 'Pago' };
+const STEP_LABELS = { empresa: 'Empresa', usuario: 'Usuario', suscripcion: 'Suscripción', pago: 'Pago' };
 const STRIPE_PENDING_KEY = 'vortex_registro_stripe_pending';
 const PAYPAL_PENDING_KEY = 'vortex_registro_paypal_pending';
 
@@ -49,8 +49,10 @@ function EyeIcon({ open }) {
 }
 
 export default function RegistroForm() {
-  const [step, setStep] = useState(1);
-  const [form, setForm] = useState(INITIAL_FORM);
+  const [searchParams] = useSearchParams();
+  const planDesdeUrl = Number(searchParams.get('plan')) || null;
+
+  const [form, setForm] = useState(() => ({ ...INITIAL_FORM, email: searchParams.get('email') || '' }));
   const [acceptedTerms, setAcceptedTerms] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
@@ -66,6 +68,8 @@ export default function RegistroForm() {
 
   const [metodoPago, setMetodoPago] = useState('tarjeta');
   const [procesandoPago, setProcesandoPago] = useState(false);
+
+  const [stepIndex, setStepIndex] = useState(0);
 
   useEffect(() => {
     let cancelled = false;
@@ -84,6 +88,23 @@ export default function RegistroForm() {
     };
   }, []);
 
+  // Si llegamos desde "Empezar ahora" de un plan en /planes (?plan=2), ese plan ya viene
+  // elegido y el paso de "Suscripción" del wizard se salta -- solo falta llenar los datos y
+  // pagar. `planValido` evita saltarnos el paso con un id que no existe (link viejo/roto).
+  const planValido = !loadingPlans && suscripciones.some((p) => p.id === planDesdeUrl);
+  const omitirPasoPlan = Boolean(planDesdeUrl) && planValido;
+
+  useEffect(() => {
+    if (planValido && !form.suscripcionId) {
+      setForm((prev) => ({ ...prev, suscripcionId: planDesdeUrl }));
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [planValido]);
+
+  const PASOS = omitirPasoPlan ? ['empresa', 'usuario', 'pago'] : ['empresa', 'usuario', 'suscripcion', 'pago'];
+  const fase = PASOS[Math.min(stepIndex, PASOS.length - 1)];
+  const TOTAL_PASOS = PASOS.length;
+
   function handleChange(field, value) {
     setForm((prev) => ({ ...prev, [field]: value }));
   }
@@ -95,27 +116,31 @@ export default function RegistroForm() {
   function handleNext() {
     setError('');
 
-    if (step === 1) {
+    if (fase === 'empresa') {
       if (!form.name || !form.documentoFiscal || !form.telefono) return setError('Completa los datos de la empresa.');
       const soloDigitos = form.documentoFiscal.replace(/\D/g, '');
       if (soloDigitos.length !== 9 && soloDigitos.length !== 11) {
         return setError('Ingresa un RNC válido (9 dígitos) o una cédula válida (11 dígitos).');
       }
+      return setStepIndex((i) => i + 1);
     }
 
-    if (step === 2) {
+    if (fase === 'usuario') {
       if (!form.nombreAdmin || !form.email || !form.password || !form.confirmPassword) return setError('Completa los campos de usuario.');
       if (!passwordRules.every((rule) => rule.ok)) return setError('Contraseña no segura.');
       if (!passwordsMatch) return setError('Las contraseñas no coinciden.');
       if (!acceptedTerms) return setError('Debes aceptar los términos.');
-    }
 
-    setStep(step + 1);
+      // Con el plan ya preseleccionado no hay paso de "Suscripción" que mostrar -- se crea la
+      // cuenta de una vez y se pasa directo a pago.
+      if (omitirPasoPlan) return crearCuentaYContinuar();
+      return setStepIndex((i) => i + 1);
+    }
   }
 
-  // Paso 3 -> 4: acá se crea la cuenta de verdad (Empresa + Usuario admin) y se inicia sesión,
-  // para que el paso de pago pueda llamar a /api/Pagos/* con una sesión real.
-  async function handleContinuarDesdePlan() {
+  // Se crea la cuenta de verdad (Empresa + Usuario admin) y se inicia sesión, para que el paso
+  // de pago pueda llamar a /api/Pagos/* con una sesión real.
+  async function crearCuentaYContinuar() {
     setError('');
     if (!form.suscripcionId) return setError('Selecciona un plan.');
 
@@ -126,7 +151,7 @@ export default function RegistroForm() {
       const datos = (await registrarEmpresa(form)) ?? {};
       await loginUsuario({ email: form.email, password: form.password });
       setCuenta({ empresaId: datos.empresaId, usuarioId: datos.usuarioId, sucursalId: datos.sucursalId });
-      setStep(4);
+      setStepIndex(PASOS.indexOf('pago'));
     } catch (err) {
       setError(err.message);
     } finally {
@@ -197,12 +222,12 @@ export default function RegistroForm() {
       <div className="regw-progress">
         <div className="regw-progress-row">
           <span>
-            Paso {step} de {TOTAL_PASOS}
+            Paso {stepIndex + 1} de {TOTAL_PASOS}
           </span>
-          <span>{STEP_LABELS[step]}</span>
+          <span>{STEP_LABELS[fase]}</span>
         </div>
         <div className="regw-track">
-          <div className="regw-fill" style={{ width: `${(step / TOTAL_PASOS) * 100}%` }}></div>
+          <div className="regw-fill" style={{ width: `${((stepIndex + 1) / TOTAL_PASOS) * 100}%` }}></div>
         </div>
       </div>
 
@@ -212,12 +237,17 @@ export default function RegistroForm() {
         className="regw-form"
         onSubmit={(e) => {
           e.preventDefault();
-          if (step === 3) handleContinuarDesdePlan();
-          else if (step < 3) handleNext();
+          if (fase === 'suscripcion') crearCuentaYContinuar();
+          else if (fase === 'empresa' || fase === 'usuario') handleNext();
         }}
       >
-        {step === 1 && (
+        {fase === 'empresa' && (
           <>
+            {omitirPasoPlan && planSeleccionado && (
+              <p className="regw-hint">
+                Plan elegido: <b>{planSeleccionado.nombre}</b> — RD${Number(planSeleccionado.precio).toLocaleString('es-DO')}/mes
+              </p>
+            )}
             <label className="regw-field">
               <span>Nombre de la empresa</span>
               <input type="text" placeholder="Ej: Comercial Pérez SRL" value={form.name} onChange={(e) => handleChange('name', e.target.value)} />
@@ -245,7 +275,7 @@ export default function RegistroForm() {
           </>
         )}
 
-        {step === 2 && (
+        {fase === 'usuario' && (
           <>
             <label className="regw-field">
               <span>Tu nombre</span>
@@ -312,7 +342,7 @@ export default function RegistroForm() {
           </>
         )}
 
-        {step === 3 && (
+        {fase === 'suscripcion' && (
           <>
             <p className="regw-hint">El pago no se efectúa ahora, solo queremos saber tu interés.</p>
             {loadingPlans && <p className="regw-hint">Cargando planes…</p>}
@@ -356,7 +386,7 @@ export default function RegistroForm() {
           </>
         )}
 
-        {step === 4 && planSeleccionado && (
+        {fase === 'pago' && planSeleccionado && (
           <>
             <p className="regw-hint">
               Te llevaremos a una página segura -- no se te cobra ahora, arrancas un mes gratis del plan{' '}
@@ -398,31 +428,38 @@ export default function RegistroForm() {
         )}
 
         <div className="regw-actions">
-          {step > 1 && step < 4 && (
-            <button type="button" className="regw-btn regw-btn--outline" onClick={() => setStep(step - 1)}>
+          {fase !== 'empresa' && fase !== 'pago' && (
+            <button type="button" className="regw-btn regw-btn--outline" onClick={() => setStepIndex((i) => i - 1)}>
               Atrás
             </button>
           )}
-          {step === 4 && (
-            <button type="button" className="regw-btn regw-btn--outline" onClick={() => setStep(3)} disabled={procesandoPago}>
+          {fase === 'pago' && (
+            <button
+              type="button"
+              className="regw-btn regw-btn--outline"
+              onClick={() => setStepIndex((i) => i - 1)}
+              disabled={procesandoPago}
+            >
               Atrás
             </button>
           )}
 
-          {step < 3 && (
-            <button className="regw-btn regw-btn--primary" type="submit">
-              Siguiente
-              <svg viewBox="0 0 15 13" fill="none" aria-hidden="true">
-                <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.6" d="m10.083 11.417 4-5.334m0 0-4-5.333m4 5.333H.75" />
-              </svg>
+          {(fase === 'empresa' || fase === 'usuario') && (
+            <button className="regw-btn regw-btn--primary" type="submit" disabled={submitting}>
+              {fase === 'usuario' && omitirPasoPlan ? (submitting ? 'Creando cuenta…' : 'Continuar') : 'Siguiente'}
+              {!(fase === 'usuario' && omitirPasoPlan) && (
+                <svg viewBox="0 0 15 13" fill="none" aria-hidden="true">
+                  <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.6" d="m10.083 11.417 4-5.334m0 0-4-5.333m4 5.333H.75" />
+                </svg>
+              )}
             </button>
           )}
-          {step === 3 && (
+          {fase === 'suscripcion' && (
             <button className="regw-btn regw-btn--primary" type="submit" disabled={submitting}>
               {submitting ? 'Creando cuenta…' : 'Continuar'}
             </button>
           )}
-          {step === 4 && (
+          {fase === 'pago' && (
             <button
               type="button"
               className="regw-btn regw-btn--primary"

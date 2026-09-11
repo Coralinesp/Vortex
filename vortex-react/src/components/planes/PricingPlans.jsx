@@ -25,7 +25,7 @@ export default function PricingPlans() {
           </div>
         </Reveal>
 
-        <div className="pp-grid reveal">
+        <Reveal as="div" className="pp-grid">
           {PLANS.map((plan) => (
             <Reveal as="article" className={`pp-card${plan.popular ? ' pp-card--popular' : ''}`} delay={plan.delay} key={plan.key}>
               <div className="pp-body">
@@ -61,7 +61,11 @@ export default function PricingPlans() {
                 </div>
               </div>
               <div className="pp-foot">
-                {plan.ctaTo ? (
+                {plan.suscripcionId ? (
+                  <Link className={`pp-btn pp-btn--${plan.ctaVariant}`} to={`/registro?plan=${plan.suscripcionId}`}>
+                    {plan.ctaLabel}
+                  </Link>
+                ) : plan.ctaTo ? (
                   <Link className={`pp-btn pp-btn--${plan.ctaVariant}`} to={plan.ctaTo}>
                     {plan.ctaLabel}
                   </Link>
@@ -73,7 +77,7 @@ export default function PricingPlans() {
               </div>
             </Reveal>
           ))}
-        </div>
+        </Reveal>
       </div>
     </section>
   );

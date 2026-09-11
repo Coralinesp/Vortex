@@ -1,6 +1,7 @@
 export const PLANS = [
   {
     key: 'basico',
+    suscripcionId: 1,
     tag: null,
     price: { cur: 'RD$', amount: '7,000', per: '/mes' },
     name: 'Básico',
@@ -16,6 +17,7 @@ export const PLANS = [
   },
   {
     key: 'profesional',
+    suscripcionId: 2,
     tag: 'Más elegido',
     price: { cur: 'RD$', amount: '14,000', per: '/mes' },
     name: 'Profesional',

@@ -1,9 +1,11 @@
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import Reveal from './Reveal.jsx';
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
 
 export default function CtaSection() {
+  const navigate = useNavigate();
   const [email, setEmail] = useState('');
   const [error, setError] = useState(false);
   const [message, setMessage] = useState({ text: '', kind: '' });
@@ -19,8 +21,7 @@ export default function CtaSection() {
     }
 
     setError(false);
-    setMessage({ text: `¡Listo! Te enviamos el acceso a tu prueba de 1 mes a ${value}.`, kind: 'ok' });
-    setEmail('');
+    navigate(`/registro?email=${encodeURIComponent(value)}`);
   }
 
   function handleChange(e) {

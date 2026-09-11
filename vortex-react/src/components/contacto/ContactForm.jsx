@@ -1,5 +1,6 @@
 import { useRef, useState } from 'react';
 import Reveal from '../common/Reveal.jsx';
+import { enviarContacto } from '../../services/contactApi.js';
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
 
@@ -17,6 +18,7 @@ export default function ContactForm() {
   const [values, setValues] = useState(INITIAL_VALUES);
   const [errors, setErrors] = useState({ nombre: false, negocio: false, correo: false });
   const [message, setMessage] = useState({ text: '', kind: '' });
+  const [submitting, setSubmitting] = useState(false);
 
   const nombreRef = useRef(null);
   const negocioRef = useRef(null);
@@ -31,7 +33,7 @@ export default function ContactForm() {
     };
   }
 
-  function handleSubmit(e) {
+  async function handleSubmit(e) {
     e.preventDefault();
 
     const required = [
@@ -54,8 +56,16 @@ export default function ContactForm() {
       return;
     }
 
-    setMessage({ text: '¡Listo! Recibimos tu mensaje, te respondemos el mismo día hábil.', kind: 'ok' });
-    setValues(INITIAL_VALUES);
+    setSubmitting(true);
+    try {
+      await enviarContacto(values);
+      setMessage({ text: '¡Listo! Recibimos tu mensaje, te respondemos el mismo día hábil.', kind: 'ok' });
+      setValues(INITIAL_VALUES);
+    } catch (err) {
+      setMessage({ text: err.message, kind: 'err' });
+    } finally {
+      setSubmitting(false);
+    }
   }
 
   return (
@@ -157,8 +167,8 @@ export default function ContactForm() {
           ></textarea>
         </label>
 
-        <button className="btn btn-primary btn-lg ct-submit" type="submit">
-          Enviar mensaje
+        <button className="btn btn-primary btn-lg ct-submit" type="submit" disabled={submitting}>
+          {submitting ? 'Enviando…' : 'Enviar mensaje'}
           <svg viewBox="0 0 15 13" fill="none" aria-hidden="true">
             <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.6" d="m10.083 11.417 4-5.334m0 0-4-5.333m4 5.333H.75" />
           </svg>

@@ -36,9 +36,9 @@ export default function Compare() {
   return (
     <section className="section compare">
       <div className="container">
-        <h2 className="compare-title reveal">
+        <Reveal as="h2" className="compare-title">
           Una mejor forma <span className="grad">de vender</span>
-        </h2>
+        </Reveal>
 
         <Reveal as="div" className="compare-grid" delay=".08s">
           <article className="cmp-card cmp-card--before">

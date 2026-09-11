@@ -38,9 +38,9 @@ export default function Hero() {
             </p>
 
             <div className="hero-actions">
-              <a className="btn btn-primary btn-lg" href="#registro">
+              <Link className="btn btn-primary btn-lg" to="/registro">
                 Comenzar prueba de 1 mes
-              </a>
+              </Link>
               <Link className="btn btn-outline btn-lg" to="/contacto#form">
                 <svg
                   width="16"
