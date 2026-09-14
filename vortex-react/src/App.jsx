@@ -4,6 +4,7 @@ import HomePage from './pages/HomePage.jsx';
 import PlanesPage from './pages/PlanesPage.jsx';
 import ContactoPage from './pages/ContactoPage.jsx';
 import RecursosPage from './pages/RecursosPage.jsx';
+import GuiaPage from './pages/GuiaPage.jsx';
 import RegistroPage from './pages/RegistroPage.jsx';
 import StripeReturnPage from './pages/StripeReturnPage.jsx';
 import PaypalReturnPage from './pages/PaypalReturnPage.jsx';
@@ -21,6 +22,7 @@ export default function App() {
         <Route path="/planes" element={<PlanesPage />} />
         <Route path="/contacto" element={<ContactoPage />} />
         <Route path="/recursos" element={<RecursosPage />} />
+        <Route path="/recursos/guias/:slug" element={<GuiaPage />} />
       </Route>
     </Routes>
   );

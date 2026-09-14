@@ -8,7 +8,7 @@ import CtaSection from '../components/common/CtaSection.jsx';
 export default function RecursosPage() {
   usePageMeta(
     'Centro de recursos — Vortex POS',
-    'Guías, videos y plantillas de Vortex: aprende a cobrar, controlar tu inventario, facturar con e-CF y administrar tus sucursales paso a paso.'
+    'Guías y plantillas de Vortex: aprende a cobrar, controlar tu inventario, facturar con e-CF y administrar tus sucursales paso a paso.'
   );
 
   return (
@@ -20,7 +20,7 @@ export default function RecursosPage() {
             <h2>
               Centro de <em>recursos</em>
             </h2>
-            <p>Guías, videos y plantillas para sacarle todo a Vortex: desde tu primera venta hasta el manejo de varias sucursales.</p>
+            <p>Guías y plantillas para sacarle todo a Vortex: desde tu primera venta hasta el manejo de varias sucursales.</p>
           </Reveal>
 
           <ResourceFeatured />

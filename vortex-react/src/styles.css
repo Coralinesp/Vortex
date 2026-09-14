@@ -1675,6 +1675,23 @@ h3 { font-size: 1.15rem; font-weight: 700; letter-spacing: -.015em; }
 .cmp-val { font-size: .88rem; font-weight: 700; color: var(--text); }
 
 .cmp-note { text-align: center; margin-top: 28px; color: var(--text-dim); font-size: .89rem; }
+
+/* --- Guía (artículo del centro de recursos) --- */
+.guia-container { max-width: 760px; }
+.guia-back { display: flex; width: fit-content; align-items: center; gap: 6px; font-size: .84rem; font-weight: 600; color: var(--text-dim); margin-bottom: 18px; }
+.guia-back svg { width: 13px; height: 13px; }
+.guia-back:hover { color: var(--violet); }
+.guia-head h1 { margin-top: 10px; font-size: clamp(1.7rem, 3vw, 2.3rem); }
+.guia-summary { margin-top: 14px; font-size: 1.05rem; color: var(--text-muted); line-height: 1.6; max-width: 640px; }
+
+.guia-media { margin-top: 32px; border-radius: var(--radius-lg); overflow: hidden; border: 1px solid rgba(26,35,64,.08); box-shadow: 0 20px 40px -24px rgba(26,35,64,.25); }
+.guia-media img { display: block; width: 100%; height: auto; }
+
+.guia-body { margin-top: 40px; display: grid; gap: 32px; }
+.guia-section h2 { font-size: 1.25rem; margin-bottom: 10px; }
+.guia-section p { color: var(--text-muted); line-height: 1.7; }
+.guia-section ul { display: grid; gap: 9px; padding-left: 20px; color: var(--text-muted); line-height: 1.6; }
+.guia-section li::marker { color: var(--violet); }
 .cmp-note a { color: var(--violet); font-weight: 600; }
 
 /* ---------- Testimonios ---------- */

@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import Reveal from '../common/Reveal.jsx';
 import { RESOURCE_ICONS, RESOURCE_ITEMS, RESOURCE_TABS, RESOURCE_TAGS } from '../../data/resources.jsx';
 
@@ -29,16 +30,29 @@ export default function ResourceFilterGrid() {
           const hidden = activeTipo !== 'todos' && item.tipo !== activeTipo;
           return (
             <Reveal as="li" className={`rc-item${hidden ? ' is-hidden' : ''}`} key={item.title}>
-              <a href="#registro" style={{ '--bg': item.bg, '--fg': item.fg }}>
-                <span className="rc-tag">{RESOURCE_TAGS[item.tipo]}</span>
-                <span className="rc-deco" aria-hidden="true">
-                  <svg viewBox="0 0 120 120" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
-                    {RESOURCE_ICONS[item.tipo]}
-                  </svg>
-                </span>
-                <h3>{item.title}</h3>
-                <span className="rc-more">Ver ahora</span>
-              </a>
+              {item.slug ? (
+                <Link to={`/recursos/guias/${item.slug}`} style={{ '--bg': item.bg, '--fg': item.fg }}>
+                  <span className="rc-tag">{RESOURCE_TAGS[item.tipo]}</span>
+                  <span className="rc-deco" aria-hidden="true">
+                    <svg viewBox="0 0 120 120" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
+                      {RESOURCE_ICONS[item.tipo]}
+                    </svg>
+                  </span>
+                  <h3>{item.title}</h3>
+                  <span className="rc-more">Ver ahora</span>
+                </Link>
+              ) : (
+                <a href="#registro" style={{ '--bg': item.bg, '--fg': item.fg }}>
+                  <span className="rc-tag">{RESOURCE_TAGS[item.tipo]}</span>
+                  <span className="rc-deco" aria-hidden="true">
+                    <svg viewBox="0 0 120 120" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
+                      {RESOURCE_ICONS[item.tipo]}
+                    </svg>
+                  </span>
+                  <h3>{item.title}</h3>
+                  <span className="rc-more">Ver ahora</span>
+                </a>
+              )}
             </Reveal>
           );
         })}
