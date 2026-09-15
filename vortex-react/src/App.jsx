@@ -5,6 +5,8 @@ import PlanesPage from './pages/PlanesPage.jsx';
 import ContactoPage from './pages/ContactoPage.jsx';
 import RecursosPage from './pages/RecursosPage.jsx';
 import GuiaPage from './pages/GuiaPage.jsx';
+import DocumentacionPage from './pages/DocumentacionPage.jsx';
+import DocumentacionModuloPage from './pages/DocumentacionModuloPage.jsx';
 import RegistroPage from './pages/RegistroPage.jsx';
 import StripeReturnPage from './pages/StripeReturnPage.jsx';
 import PaypalReturnPage from './pages/PaypalReturnPage.jsx';
@@ -23,6 +25,8 @@ export default function App() {
         <Route path="/contacto" element={<ContactoPage />} />
         <Route path="/recursos" element={<RecursosPage />} />
         <Route path="/recursos/guias/:slug" element={<GuiaPage />} />
+        <Route path="/documentacion" element={<DocumentacionPage />} />
+        <Route path="/documentacion/:modulo" element={<DocumentacionModuloPage />} />
       </Route>
     </Routes>
   );

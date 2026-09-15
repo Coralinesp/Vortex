@@ -52,6 +52,10 @@ export default function Header() {
             <Link to="/recursos">Recursos</Link>
           )}
 
+          <Link to="/documentacion" aria-current={pathname.startsWith('/documentacion') ? 'page' : undefined}>
+            Documentación
+          </Link>
+
           <HomeAnchorLink pathname={pathname} hash="#faq">
             FAQ
           </HomeAnchorLink>

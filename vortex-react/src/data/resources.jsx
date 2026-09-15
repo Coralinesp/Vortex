@@ -38,8 +38,9 @@ export const FEATURED_RESOURCES = [
     tipo: 'guia',
     bg: 'linear-gradient(160deg,#4459E1,#2A3CBD)',
     fg: '#fff',
-    title: 'Cómo hacer un conteo cíclico sin cerrar la tienda',
+    title: 'Ajusta tu inventario sin parar de vender',
     ctaLabel: 'Leer la guía',
+    to: '/documentacion/inventario',
   },
   {
     tipo: 'guia',
@@ -55,6 +56,8 @@ export const FEATURED_RESOURCES = [
     fg: '#1a2340',
     title: 'Catálogo listo para importar a Vortex',
     ctaLabel: 'Descargar plantilla',
+    href: '/assets/plantillas/catalogo-vortex-plantilla.csv',
+    download: true,
   },
 ];
 
@@ -66,12 +69,19 @@ export const RESOURCE_TABS = [
 ];
 
 export const RESOURCE_ITEMS = [
-  { tipo: 'guia', bg: '#4459E1', fg: '#fff', title: 'Conteo cíclico sin cerrar la tienda' },
-  { tipo: 'guia', bg: '#2A3CBD', fg: '#fff', title: 'Cómo fijar precios por sucursal' },
+  { tipo: 'guia', bg: '#4459E1', fg: '#fff', title: 'Ajustes de inventario, paso a paso', to: '/documentacion/inventario' },
+  { tipo: 'guia', bg: '#2A3CBD', fg: '#fff', title: 'Cómo fijar precios por sucursal', to: '/documentacion/inventario' },
   { tipo: 'guia', bg: '#1d2668', fg: '#fff', title: 'Tu primera venta en Vortex', slug: 'ventas-y-cobro' },
-  { tipo: 'guia', bg: '#586de8', fg: '#fff', title: 'Devoluciones y notas de crédito', slug: 'ventas-y-cobro' },
-  { tipo: 'plantilla', bg: '#fdeff6', fg: '#1a2340', title: 'Catálogo para importar en CSV' },
-  { tipo: 'plantilla', bg: '#eef1ff', fg: '#1a2340', title: 'Etiquetas de código de barras' },
+  { tipo: 'guia', bg: '#586de8', fg: '#fff', title: 'Cómo hacer una devolución', slug: 'ventas-y-cobro' },
+  {
+    tipo: 'plantilla',
+    bg: '#fdeff6',
+    fg: '#1a2340',
+    title: 'Catálogo para importar en CSV',
+    href: '/assets/plantillas/catalogo-vortex-plantilla.csv',
+    download: true,
+  },
+  { tipo: 'articulo', bg: '#eef1ff', fg: '#1a2340', title: 'Cómo escanear productos por código de barras', to: '/documentacion/ventas-y-cobro' },
   { tipo: 'articulo', bg: '#f1f2f5', fg: '#1a2340', title: 'Qué mirar en tu reporte de utilidad', slug: 'reportes' },
   { tipo: 'articulo', bg: '#e7ecfb', fg: '#1a2340', title: 'Cuándo conviene abrir otra sucursal', slug: 'sucursales-y-usuarios' },
 ];

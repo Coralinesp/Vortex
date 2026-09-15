@@ -51,9 +51,7 @@ export default function Footer() {
           <HomeAnchorLink pathname={pathname} hash="#top">
             Estado del servicio
           </HomeAnchorLink>
-          <HomeAnchorLink pathname={pathname} hash="#top">
-            Documentación API
-          </HomeAnchorLink>
+          <Link to="/documentacion">Documentación</Link>
           <Link to="/contacto">Contacto</Link>
         </nav>
       </div>

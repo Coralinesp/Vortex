@@ -28,30 +28,29 @@ export default function ResourceFilterGrid() {
       <ul className="rc-grid" id="rcGrid">
         {RESOURCE_ITEMS.map((item) => {
           const hidden = activeTipo !== 'todos' && item.tipo !== activeTipo;
+          const isDownload = Boolean(item.href && item.download);
+          const content = (
+            <>
+              <span className="rc-tag">{RESOURCE_TAGS[item.tipo]}</span>
+              <span className="rc-deco" aria-hidden="true">
+                <svg viewBox="0 0 120 120" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
+                  {RESOURCE_ICONS[item.tipo]}
+                </svg>
+              </span>
+              <h3>{item.title}</h3>
+              <span className="rc-more">{isDownload ? 'Descargar' : 'Ver ahora'}</span>
+            </>
+          );
           return (
             <Reveal as="li" className={`rc-item${hidden ? ' is-hidden' : ''}`} key={item.title}>
-              {item.slug ? (
-                <Link to={`/recursos/guias/${item.slug}`} style={{ '--bg': item.bg, '--fg': item.fg }}>
-                  <span className="rc-tag">{RESOURCE_TAGS[item.tipo]}</span>
-                  <span className="rc-deco" aria-hidden="true">
-                    <svg viewBox="0 0 120 120" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
-                      {RESOURCE_ICONS[item.tipo]}
-                    </svg>
-                  </span>
-                  <h3>{item.title}</h3>
-                  <span className="rc-more">Ver ahora</span>
-                </Link>
-              ) : (
-                <a href="#registro" style={{ '--bg': item.bg, '--fg': item.fg }}>
-                  <span className="rc-tag">{RESOURCE_TAGS[item.tipo]}</span>
-                  <span className="rc-deco" aria-hidden="true">
-                    <svg viewBox="0 0 120 120" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
-                      {RESOURCE_ICONS[item.tipo]}
-                    </svg>
-                  </span>
-                  <h3>{item.title}</h3>
-                  <span className="rc-more">Ver ahora</span>
+              {isDownload ? (
+                <a href={item.href} download style={{ '--bg': item.bg, '--fg': item.fg }}>
+                  {content}
                 </a>
+              ) : (
+                <Link to={item.to || (item.slug ? `/recursos/guias/${item.slug}` : '#registro')} style={{ '--bg': item.bg, '--fg': item.fg }}>
+                  {content}
+                </Link>
               )}
             </Reveal>
           );
