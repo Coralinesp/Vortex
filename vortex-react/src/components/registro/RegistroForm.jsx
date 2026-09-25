@@ -8,6 +8,8 @@ import {
   createPayPalOrder,
 } from '../../services/registerApi.js';
 import { PASSWORD_RULES, formatCedulaRncInput, formatPhoneInput, parsePlanFeatures } from '../../utils/registroHelpers.js';
+import LegalModal from './LegalModal.jsx';
+import { TERMS_SECTIONS, PRIVACY_SECTIONS } from '../../data/legalModal.js';
 
 const STEP_LABELS = { empresa: 'Empresa', usuario: 'Usuario', suscripcion: 'Suscripción', pago: 'Pago' };
 const STRIPE_PENDING_KEY = 'vortex_registro_stripe_pending';
@@ -54,6 +56,7 @@ export default function RegistroForm() {
 
   const [form, setForm] = useState(() => ({ ...INITIAL_FORM, email: searchParams.get('email') || '' }));
   const [acceptedTerms, setAcceptedTerms] = useState(false);
+  const [legalModal, setLegalModal] = useState(null);
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
   const [isPasswordFocused, setIsPasswordFocused] = useState(false);
@@ -337,7 +340,15 @@ export default function RegistroForm() {
 
             <label className="regw-terms">
               <input type="checkbox" checked={acceptedTerms} onChange={(e) => setAcceptedTerms(e.target.checked)} />
-              Acepto los <span className="regw-link">términos y condiciones</span>.
+              Acepto los{' '}
+              <button type="button" className="regw-link regw-link-btn" onClick={() => setLegalModal('terminos')}>
+                términos y condiciones
+              </button>{' '}
+              y la{' '}
+              <button type="button" className="regw-link regw-link-btn" onClick={() => setLegalModal('privacidad')}>
+                política de privacidad
+              </button>
+              .
             </label>
           </>
         )}
@@ -475,6 +486,27 @@ export default function RegistroForm() {
           )}
         </div>
       </form>
+
+      {legalModal === 'terminos' && (
+        <LegalModal
+          title="Términos y Condiciones"
+          subtitle="Términos y Condiciones de Uso"
+          sections={TERMS_SECTIONS}
+          onClose={() => setLegalModal(null)}
+          onAccept={() => {
+            setAcceptedTerms(true);
+            setLegalModal(null);
+          }}
+        />
+      )}
+      {legalModal === 'privacidad' && (
+        <LegalModal
+          title="Política de Privacidad"
+          subtitle="Política de Privacidad"
+          sections={PRIVACY_SECTIONS}
+          onClose={() => setLegalModal(null)}
+        />
+      )}
     </div>
   );
 }

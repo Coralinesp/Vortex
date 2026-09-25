@@ -35,22 +35,13 @@ export default function Footer() {
           <HomeAnchorLink pathname={pathname} hash="#faq">
             Preguntas
           </HomeAnchorLink>
-          <HomeAnchorLink pathname={pathname} hash="#top">
-            Blog
-          </HomeAnchorLink>
-          <HomeAnchorLink pathname={pathname} hash="#top">
-            Trabaja con nosotros
-          </HomeAnchorLink>
+          <Link to="/blog">Blog</Link>
         </nav>
 
         <nav className="footer-col" aria-label="Soporte">
           <h4>Soporte</h4>
-          <HomeAnchorLink pathname={pathname} hash="#top">
-            Centro de ayuda
-          </HomeAnchorLink>
-          <HomeAnchorLink pathname={pathname} hash="#top">
-            Estado del servicio
-          </HomeAnchorLink>
+          <Link to="/centro-de-ayuda">Centro de ayuda</Link>
+          <Link to="/estado-del-servicio">Estado del servicio</Link>
           <Link to="/documentacion">Documentación</Link>
           <Link to="/contacto">Contacto</Link>
         </nav>
@@ -59,17 +50,12 @@ export default function Footer() {
       <div className="container footer-bottom">
         <p>
           &copy; <span id="year">{new Date().getFullYear()}</span> Vortex POS. Todos los derechos reservados.
+          Desarrollado por Arcode Dominicana.
         </p>
         <p className="footer-legal">
-          <HomeAnchorLink pathname={pathname} hash="#top">
-            Privacidad
-          </HomeAnchorLink>
-          <HomeAnchorLink pathname={pathname} hash="#top">
-            Términos
-          </HomeAnchorLink>
-          <HomeAnchorLink pathname={pathname} hash="#top">
-            Cookies
-          </HomeAnchorLink>
+          <Link to="/privacidad">Privacidad</Link>
+          <Link to="/terminos">Términos</Link>
+          <Link to="/cookies">Cookies</Link>
         </p>
       </div>
     </footer>
