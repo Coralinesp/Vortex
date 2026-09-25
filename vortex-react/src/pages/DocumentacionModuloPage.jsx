@@ -40,10 +40,18 @@ export default function DocumentacionModuloPage() {
 
               {mod.sections.map((section) => (
                 <Reveal as="section" className="docs-section" key={section.heading}>
-                  <h2>{section.heading}</h2>
+                  <div className="docs-section-head">
+                    <h2>{section.heading}</h2>
+                    <span className="docs-section-count">{section.steps.length} pasos</span>
+                  </div>
                   <div className="docs-steps">
                     {section.steps.map((step, i) => (
-                      <DocsStep key={step.title} index={i + 1} step={step} />
+                      <DocsStep
+                        key={step.title}
+                        index={i + 1}
+                        step={step}
+                        isLast={i === section.steps.length - 1}
+                      />
                     ))}
                   </div>
                 </Reveal>
