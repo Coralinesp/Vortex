@@ -5,10 +5,12 @@ import CtaSection from '../components/common/CtaSection.jsx';
 import DocsSidebar from '../components/docs/DocsSidebar.jsx';
 import DocsStep from '../components/docs/DocsStep.jsx';
 import { DOC_MODULES, getDocModuleBySlug } from '../data/docs.jsx';
+import { getVideosByModule } from '../data/docsVideos.js';
 
 export default function DocumentacionModuloPage() {
   const { modulo } = useParams();
   const mod = getDocModuleBySlug(modulo);
+  const videos = mod ? getVideosByModule(mod.slug) : [];
 
   usePageMeta(mod ? `${mod.title} — Documentación Vortex` : 'Documentación — Vortex POS', mod?.summary);
 
@@ -36,6 +38,17 @@ export default function DocumentacionModuloPage() {
                 </span>
                 <h1>{mod.title}</h1>
                 <p className="guia-summary">{mod.summary}</p>
+
+                {videos.length > 0 && (
+                  <Link to={`/documentacion/videos/${mod.slug}`} className="docs-video-inline">
+                    <span className="docs-video-inline-icon">
+                      <svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">
+                        <path d="M4.5 3.3c0-.7.8-1.2 1.5-.8l7 4.7c.6.4.6 1.3 0 1.7l-7 4.7c-.7.4-1.5 0-1.5-.8V3.3Z" />
+                      </svg>
+                    </span>
+                    Mira el video de este módulo
+                  </Link>
+                )}
               </Reveal>
 
               {mod.sections.map((section) => (

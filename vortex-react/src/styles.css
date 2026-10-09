@@ -1724,6 +1724,112 @@ h3 { font-size: 1.15rem; font-weight: 700; letter-spacing: -.015em; }
 .docs-sidebar a:hover { color: var(--text); }
 .docs-sidebar a.is-active { color: var(--violet); font-weight: 700; border-left-color: var(--violet); }
 
+.docs-sidebar-videos {
+  display: flex; align-items: center; gap: 9px; margin-bottom: 20px;
+  padding: 10px 14px; border-radius: 10px; background: var(--panel);
+  font-size: .88rem; font-weight: 700; color: var(--text);
+  transition: background .2s var(--ease), color .2s var(--ease);
+}
+.docs-sidebar-videos svg { flex: none; width: 13px; height: 13px; color: var(--violet); }
+.docs-sidebar-videos:hover { background: rgba(68,89,225,.1); color: var(--violet); }
+
+/* Banner de la portada de Documentación, hacia el hub de videos */
+.docs-video-banner { margin-bottom: 28px; }
+.docs-video-banner a {
+  display: flex; align-items: center; gap: 16px; padding: 20px 24px; border-radius: 18px;
+  background: linear-gradient(135deg, rgba(68,89,225,.08), rgba(68,89,225,.02));
+  border: 1px solid rgba(68,89,225,.16);
+  transition: transform .22s var(--ease), box-shadow .22s var(--ease);
+}
+.docs-video-banner a:hover { transform: translateY(-2px); box-shadow: var(--shadow-soft); }
+.docs-video-banner-icon {
+  flex: none; width: 44px; height: 44px; border-radius: 50%; background: var(--violet);
+  color: #fff; display: grid; place-items: center;
+}
+.docs-video-banner-icon svg { width: 15px; height: 15px; }
+.docs-video-banner-text { flex: 1; min-width: 0; display: grid; gap: 3px; }
+.docs-video-banner-text strong { font-size: 1rem; color: var(--text); }
+.docs-video-banner-text span { font-size: .88rem; color: var(--text-muted); }
+.docs-video-banner-cta { flex: none; font-size: .88rem; font-weight: 700; color: var(--violet); }
+
+/* Aviso dentro de un módulo que ya tiene video */
+.docs-video-inline {
+  margin-top: 18px; display: inline-flex; align-items: center; gap: 9px;
+  padding: 9px 16px; border-radius: 999px; width: fit-content;
+  background: rgba(68,89,225,.08); border: 1px solid rgba(68,89,225,.18);
+  color: var(--violet); font-size: .86rem; font-weight: 700;
+  transition: background .2s var(--ease);
+}
+.docs-video-inline:hover { background: rgba(68,89,225,.14); }
+.docs-video-inline-icon { flex: none; display: grid; place-items: center; width: 16px; height: 16px; }
+.docs-video-inline-icon svg { width: 11px; height: 11px; }
+
+/* --- Reproductor de video estilo "curso" (ver DocsVideoPlayer.jsx) --- */
+.docs-player {
+  margin-top: 8px; display: grid; grid-template-columns: 1fr 340px;
+  border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-soft);
+  background: #0b0d1a;
+}
+.docs-player-main { display: flex; flex-direction: column; min-width: 0; }
+.docs-player-topbar {
+  padding: 14px 22px; font-size: .84rem; font-weight: 700; color: rgba(255,255,255,.75);
+  border-bottom: 1px solid rgba(255,255,255,.08);
+}
+.docs-player-stage { position: relative; width: 100%; aspect-ratio: 16 / 9; background: #000; }
+.docs-player-video { display: block; width: 100%; height: 100%; background: #000; }
+.docs-player-caption { padding: 18px 22px 24px; }
+.docs-player-caption h3 { color: #fff; font-size: 1.05rem; }
+.docs-player-caption p { margin-top: 6px; color: rgba(255,255,255,.6); font-size: .88rem; line-height: 1.6; }
+
+.docs-player-sidebar {
+  display: flex; flex-direction: column; min-width: 0;
+  background: #11131f; border-left: 1px solid rgba(255,255,255,.08);
+}
+.docs-player-sidebar-head {
+  flex: none; padding: 16px 18px; font-size: .76rem; font-weight: 800; text-transform: uppercase;
+  letter-spacing: .1em; color: rgba(255,255,255,.5); border-bottom: 1px solid rgba(255,255,255,.08);
+}
+.docs-player-sidebar-list {
+  overflow-y: auto; max-height: 540px; padding-bottom: 8px;
+  scrollbar-width: none; -ms-overflow-style: none;
+}
+.docs-player-sidebar-list::-webkit-scrollbar { display: none; }
+.docs-player-group-head {
+  padding: 14px 18px 6px; font-size: .72rem; font-weight: 800; text-transform: uppercase;
+  letter-spacing: .06em; color: rgba(255,255,255,.38);
+}
+.docs-player-group ul { display: grid; }
+.docs-player-item {
+  width: 100%; display: flex; align-items: center; gap: 11px; padding: 10px 18px;
+  margin: 0; border: 0; background: none; cursor: pointer; text-align: left;
+  color: rgba(255,255,255,.82); font: inherit; transition: background .15s var(--ease);
+}
+.docs-player-item:hover { background: rgba(255,255,255,.05); }
+.docs-player-item:focus-visible { outline: 2px solid var(--violet); outline-offset: -2px; }
+.docs-player-item.is-active { background: rgba(68,89,225,.2); color: #fff; }
+.docs-player-item-icon {
+  flex: none; width: 22px; height: 22px; display: grid; place-items: center;
+  border-radius: 50%; background: rgba(255,255,255,.08); color: rgba(255,255,255,.7);
+}
+.docs-player-item-icon svg { width: 10px; height: 10px; }
+.docs-player-item.is-active .docs-player-item-icon { background: var(--violet); color: #fff; }
+.docs-player-item-text { display: grid; gap: 2px; min-width: 0; }
+.docs-player-item-title {
+  font-size: .86rem; font-weight: 600; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+}
+.docs-player-item-duration { font-size: .74rem; color: rgba(255,255,255,.4); }
+.docs-player-item.is-active .docs-player-item-duration { color: rgba(255,255,255,.65); }
+
+@media (max-width: 900px) {
+  .docs-player { grid-template-columns: 1fr; }
+  .docs-player-sidebar { border-left: none; border-top: 1px solid rgba(255,255,255,.08); }
+  .docs-player-sidebar-list { max-height: 320px; }
+}
+@media (max-width: 640px) {
+  .docs-video-banner a { flex-wrap: wrap; }
+  .docs-video-banner-cta { width: 100%; }
+}
+
 .docs-content { max-width: 800px; }
 .docs-head h1 { margin-top: 10px; font-size: clamp(1.7rem, 3vw, 2.3rem); }
 

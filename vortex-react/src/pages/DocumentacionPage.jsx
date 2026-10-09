@@ -27,6 +27,21 @@ export default function DocumentacionPage() {
             </p>
           </Reveal>
 
+          <Reveal as="div" className="docs-video-banner" delay=".04s">
+            <Link to="/documentacion/videos">
+              <span className="docs-video-banner-icon">
+                <svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">
+                  <path d="M4.5 3.3c0-.7.8-1.2 1.5-.8l7 4.7c.6.4.6 1.3 0 1.7l-7 4.7c-.7.4-1.5 0-1.5-.8V3.3Z" />
+                </svg>
+              </span>
+              <span className="docs-video-banner-text">
+                <strong>Nuevo: documentación en video</strong>
+                <span>Mira cómo funciona cada módulo en pantalla real, paso a paso.</span>
+              </span>
+              <span className="docs-video-banner-cta">Ver videos →</span>
+            </Link>
+          </Reveal>
+
           <ul className="docs-grid">
             {modules.map((mod, i) => (
               <Reveal as="li" className="docs-card" delay={`${(i % 3) * 0.04}s`} key={mod.slug}>
