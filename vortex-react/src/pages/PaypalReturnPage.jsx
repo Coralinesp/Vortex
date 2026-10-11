@@ -36,8 +36,8 @@ export default function PaypalReturnPage() {
           empresaId: pendiente.empresaId,
           usuarioId: pendiente.usuarioId,
           planId: pendiente.planId,
-          monto: pendiente.monto,
-          estado: 'aprobado',
+          proveedorPago: 'paypal',
+          referenciaPago: token,
         })
       )
       .then(() => {

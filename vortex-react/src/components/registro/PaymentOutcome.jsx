@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { verificarCorreo, reenviarCodigoVerificacion, actualizarNombreSucursal } from '../../services/registerApi.js';
+import { hostDelSistema } from '../../utils/registroHelpers.js';
 
 const LARGO_CODIGO = 6;
 
@@ -46,8 +47,8 @@ function VerificarCorreo({ onVerified }) {
 
     setVerificando(true);
     try {
-      await verificarCorreo(codigo);
-      onVerified();
+      const respuesta = await verificarCorreo(codigo);
+      onVerified(respuesta?.subdominio ?? respuesta?.Subdominio ?? null);
     } catch (err) {
       setError(err.message);
     } finally {
@@ -164,7 +165,11 @@ function NombrarSucursal({ sucursalId, onDone }) {
    "verificar" el resto del recorrido (código de correo, nombrar sucursal) es interno. */
 export default function PaymentOutcome({ estado, mensaje, sucursalId }) {
   const [faseLocal, setFaseLocal] = useState(null);
+  // Subdominio de la empresa, devuelto por el backend al verificar el correo -- con él se arma
+  // el enlace al sistema del mensaje final.
+  const [subdominio, setSubdominio] = useState(null);
   const fase = faseLocal ?? estado;
+  const host = hostDelSistema(subdominio);
 
   return (
     <div className="regw-form-panel">
@@ -177,15 +182,36 @@ export default function PaymentOutcome({ estado, mensaje, sucursalId }) {
         </div>
       )}
 
-      {fase === 'verificar' && <VerificarCorreo onVerified={() => setFaseLocal(sucursalId ? 'sucursal' : 'listo')} />}
+      {fase === 'verificar' && (
+        <VerificarCorreo
+          onVerified={(sub) => {
+            setSubdominio(sub);
+            setFaseLocal(sucursalId ? 'sucursal' : 'listo');
+          }}
+        />
+      )}
 
       {fase === 'sucursal' && <NombrarSucursal sucursalId={sucursalId} onDone={() => setFaseLocal('listo')} />}
 
       {fase === 'listo' && (
         <div className="regw-outcome-body">
           <CheckCircle />
-          <h2>¡Tu cuenta de Vortex está lista!</h2>
-          <p>Tu mes gratis ya empezó. Ya puedes entrar a Vortex con el correo y la contraseña que registraste.</p>
+          <h2>¡Tu registro fue un éxito!</h2>
+          {host ? (
+            <>
+              <p>Tu mes gratis ya empezó. Para ingresar al sistema haz clic en el enlace de abajo y entra con el correo y la contraseña que registraste.</p>
+              <p className="regw-hint">Este es el dominio de tu empresa. Guárdalo: es por donde vas a entrar siempre.</p>
+              <a
+                className="regw-btn regw-btn--primary"
+                style={{ width: '100%', textAlign: 'center' }}
+                href={`https://${host}/login`}
+              >
+                {host}
+              </a>
+            </>
+          ) : (
+            <p>Tu mes gratis ya empezó. Te enviaremos por correo el enlace para entrar al sistema con el correo y la contraseña que registraste.</p>
+          )}
         </div>
       )}
 

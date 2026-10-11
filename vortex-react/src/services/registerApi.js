@@ -139,11 +139,14 @@ export async function capturePayPalOrder(token) {
   });
 }
 
-export async function aprobarYActivarPlan({ empresaId, usuarioId, planId, monto, estado = 'aprobado' }) {
+/* El backend verifica el cobro contra el proveedor con `referenciaPago` (token de la orden de
+   PayPal / session_id de Stripe) y toma el monto de ahí -- ya no confía en un monto/estado
+   enviado desde el navegador. */
+export async function aprobarYActivarPlan({ empresaId, usuarioId, planId, proveedorPago, referenciaPago }) {
   return apiRequest('/api/Pagos/aprobar-y-activar-plan', {
     method: 'POST',
     auth: true,
-    body: { empresaId, usuarioId, planId, monto, estado },
+    body: { empresaId, usuarioId, planId, proveedorPago, referenciaPago },
     fallbackError: 'El pago se completó, pero no se pudo activar el plan. Contacta soporte.',
   });
 }

@@ -58,3 +58,14 @@ export const PASSWORD_RULES = [
   { key: 'Número', test: (p) => /\d/.test(p) },
   { key: 'Símbolo (@$!%*?&)', test: (p) => /[@$!%*?&]/.test(p) },
 ];
+
+/* Dominio base del sistema (cada empresa entra por <subdominio>.<dominio>, ver
+   LoginUsuarioCommandHandler en el backend). Configurable con VITE_DOMINIO_SISTEMA. */
+const DOMINIO_SISTEMA = import.meta.env.VITE_DOMINIO_SISTEMA || 'vortex-pos.com';
+
+/* Host del sistema para una empresa (ej. "arcodedominicana.vortex-pos.com"), o null si todavía
+   no tiene subdominio asignado. */
+export function hostDelSistema(subdominio) {
+  const limpio = String(subdominio ?? '').trim().toLowerCase();
+  return limpio ? `${limpio}.${DOMINIO_SISTEMA}` : null;
+}
