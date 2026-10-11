@@ -1,6 +1,38 @@
+import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import Reveal from '../common/Reveal.jsx';
 import { PLANS } from '../../data/plans.js';
+import { fetchSuscripciones } from '../../services/registerApi.js';
+
+/* Precio real de cada plan según el backend (el mismo que se cobra en el registro), por id de
+   suscripción. Antes esta página solo mostraba el precio fijo de data/plans.js: si el precio
+   cambiaba en la base de datos, la landing anunciaba uno y el registro cobraba otro. El de
+   data/plans.js queda solo como respaldo si la API no responde. */
+function usePreciosDelBackend() {
+  const [precios, setPrecios] = useState({});
+
+  useEffect(() => {
+    let cancelado = false;
+    fetchSuscripciones()
+      .then((planes) => {
+        if (cancelado) return;
+        const mapa = {};
+        planes.forEach((p) => {
+          const precio = Number(p?.precio ?? p?.Precio);
+          if (p?.id != null && Number.isFinite(precio)) mapa[p.id] = precio;
+        });
+        setPrecios(mapa);
+      })
+      .catch(() => {});
+    return () => {
+      cancelado = true;
+    };
+  }, []);
+
+  return precios;
+}
+
+const formatoPrecio = (valor) => Number(valor).toLocaleString('es-DO', { maximumFractionDigits: 2 });
 
 function CheckIcon() {
   return (
@@ -11,6 +43,8 @@ function CheckIcon() {
 }
 
 export default function PricingPlans() {
+  const precios = usePreciosDelBackend();
+
   return (
     <section className="section section-first" id="precios">
       <div className="container">
@@ -38,7 +72,7 @@ export default function PricingPlans() {
                 ) : (
                   <p className="pp-price">
                     <span className="cur">{plan.price.cur}</span>
-                    <b>{plan.price.amount}</b>
+                    <b>{plan.suscripcionId && precios[plan.suscripcionId] != null ? formatoPrecio(precios[plan.suscripcionId]) : plan.price.amount}</b>
                     <span className="per">{plan.price.per}</span>
                   </p>
                 )}

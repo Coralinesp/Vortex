@@ -204,7 +204,9 @@ export default function PaymentOutcome({ estado, mensaje, sucursalId }) {
               <a
                 className="regw-btn regw-btn--primary"
                 style={{ width: '100%', textAlign: 'center' }}
-                href={`https://${host}/login`}
+                // ?bienvenida=1: el sistema muestra el banner de bienvenida con el tutorial al
+                // primer ingreso (ver welcomeBanner.js en el frontend).
+                href={`https://${host}/login?bienvenida=1`}
               >
                 {host}
               </a>
