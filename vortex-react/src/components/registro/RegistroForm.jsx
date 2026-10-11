@@ -357,6 +357,11 @@ export default function RegistroForm() {
           <>
             <p className="regw-hint">El pago no se efectúa ahora, solo queremos saber tu interés.</p>
             {loadingPlans && <p className="regw-hint">Cargando planes…</p>}
+            {!loadingPlans && !plansError && suscripciones.length === 0 && (
+              <div className="regw-error">
+                No hay planes disponibles en este momento. Intenta de nuevo en unos minutos o escríbenos desde Contacto.
+              </div>
+            )}
             {!loadingPlans && (
               <div className="regw-plans" role="radiogroup" aria-label="Plan de interés">
                 {suscripciones.map((plan) => {
@@ -466,7 +471,7 @@ export default function RegistroForm() {
             </button>
           )}
           {fase === 'suscripcion' && (
-            <button className="regw-btn regw-btn--primary" type="submit" disabled={submitting}>
+            <button className="regw-btn regw-btn--primary" type="submit" disabled={submitting || suscripciones.length === 0}>
               {submitting ? 'Creando cuenta…' : 'Continuar'}
             </button>
           )}
