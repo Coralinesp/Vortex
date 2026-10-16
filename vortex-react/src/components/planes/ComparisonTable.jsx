@@ -1,6 +1,7 @@
 import { Fragment } from 'react';
 import Reveal from '../common/Reveal.jsx';
 import { COMPARISON_COLUMNS, COMPARISON_GROUPS } from '../../data/plans.js';
+import { usePreciosPlanes, formatoPrecio } from '../../hooks/usePreciosPlanes.js';
 
 function ComparisonCell({ value, planName }) {
   if (value === 'yes') {
@@ -35,6 +36,8 @@ function ComparisonCell({ value, planName }) {
 }
 
 export default function ComparisonTable() {
+  const precios = usePreciosPlanes();
+
   return (
     <section className="section comparativa" id="comparativa">
       <div className="container">
@@ -55,7 +58,7 @@ export default function ComparisonTable() {
                 {COMPARISON_COLUMNS.map((col) => (
                   <th scope="col" className={col.popular ? 'is-popular' : undefined} key={col.name}>
                     <b>{col.name}</b>
-                    <i>{col.price}</i>
+                    <i>{col.suscripcionId && precios[col.suscripcionId] != null ? `RD$${formatoPrecio(precios[col.suscripcionId])}/mes` : col.price}</i>
                   </th>
                 ))}
               </tr>

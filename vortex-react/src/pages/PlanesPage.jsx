@@ -6,7 +6,7 @@ import CtaSection from '../components/common/CtaSection.jsx';
 export default function PlanesPage() {
   usePageMeta(
     'Planes y precios — Vortex POS',
-    'Planes y precios de Vortex: punto de venta, inventario y clientes desde RD$7,000 al mes. Compara qué incluye el plan Básico, Profesional y Empresarial.'
+    'Planes y precios de Vortex: punto de venta, inventario y clientes desde RD$10,000 al mes. Compara qué incluye el plan Básico, Profesional y Empresarial.'
   );
 
   return (

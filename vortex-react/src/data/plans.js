@@ -3,7 +3,7 @@ export const PLANS = [
     key: 'basico',
     suscripcionId: 1,
     tag: null,
-    price: { cur: 'RD$', amount: '7,000', per: '/mes' },
+    price: { cur: 'RD$', amount: '10,000', per: '/mes' },
     name: 'Básico',
     description:
       'Ideal para un negocio que está empezando y necesita facturar, controlar su inventario y llevar el registro de sus clientes.',
@@ -19,7 +19,7 @@ export const PLANS = [
     key: 'profesional',
     suscripcionId: 2,
     tag: 'Más elegido',
-    price: { cur: 'RD$', amount: '14,000', per: '/mes' },
+    price: { cur: 'RD$', amount: '15,000', per: '/mes' },
     name: 'Profesional',
     description:
       'Ideal para un negocio en crecimiento que ya maneja proveedores, varias sucursales y necesita un mayor control de su equipo de trabajo.',
@@ -96,7 +96,14 @@ export const COMPARISON_GROUPS = [
 ];
 
 export const COMPARISON_COLUMNS = [
-  { name: 'Básico', price: 'RD$7,000/mes', popular: false },
-  { name: 'Profesional', price: 'RD$14,000/mes', popular: true },
+  { name: 'Básico', suscripcionId: 1, price: 'RD$10,000/mes', popular: false },
+  { name: 'Profesional', suscripcionId: 2, price: 'RD$15,000/mes', popular: true },
   { name: 'Empresarial', price: 'A cotizar', popular: false },
 ];
+
+/* Planes que se pueden contratar solos desde el registro (los que tienen precio publicado y
+   suscripcionId). Empresarial es "a cotizar": se gestiona por Contacto y no debe aparecer en el
+   registro aunque exista en el backend. */
+export const IDS_PLANES_AUTOSERVICIO = PLANS.filter((plan) => plan.suscripcionId && !plan.priceQuote).map(
+  (plan) => plan.suscripcionId
+);

@@ -9,6 +9,7 @@ import {
 } from '../../services/registerApi.js';
 import { PASSWORD_RULES, formatCedulaRncInput, formatPhoneInput, parsePlanFeatures } from '../../utils/registroHelpers.js';
 import LegalModal from './LegalModal.jsx';
+import { IDS_PLANES_AUTOSERVICIO } from '../../data/plans.js';
 import { TERMS_SECTIONS, PRIVACY_SECTIONS } from '../../data/legalModal.js';
 
 const STEP_LABELS = { empresa: 'Empresa', usuario: 'Usuario', suscripcion: 'Suscripción', pago: 'Pago' };
@@ -78,7 +79,10 @@ export default function RegistroForm() {
     let cancelled = false;
     fetchSuscripciones()
       .then((data) => {
-        if (!cancelled) setSuscripciones(data);
+        // Solo los planes de autoservicio (Básico y Profesional): Empresarial es "a cotizar" y se
+        // contrata por Contacto -- antes aparecía acá con el precio del backend, distinto de lo
+        // que anuncia la página de planes.
+        if (!cancelled) setSuscripciones(data.filter((plan) => IDS_PLANES_AUTOSERVICIO.includes(plan.id)));
       })
       .catch((err) => {
         if (!cancelled) setPlansError(err.message);
