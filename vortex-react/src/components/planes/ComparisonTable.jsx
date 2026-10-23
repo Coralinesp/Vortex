@@ -1,4 +1,4 @@
-import { Fragment } from 'react';
+import { Fragment, useState } from 'react';
 import Reveal from '../common/Reveal.jsx';
 import { COMPARISON_COLUMNS, COMPARISON_GROUPS } from '../../data/plans.js';
 import { usePreciosPlanes, formatoPrecio } from '../../hooks/usePreciosPlanes.js';
@@ -37,6 +37,10 @@ function ComparisonCell({ value, planName }) {
 
 export default function ComparisonTable() {
   const precios = usePreciosPlanes();
+  // En celular se ve un plan a la vez; arranca en el más elegido.
+  const [plan, setPlan] = useState(() => Math.max(0, COMPARISON_COLUMNS.findIndex((col) => col.popular)));
+  const precioDe = (col) =>
+    col.suscripcionId && precios[col.suscripcionId] != null ? `RD$${formatoPrecio(precios[col.suscripcionId])}/mes` : col.price;
 
   return (
     <section className="section comparativa" id="comparativa">
@@ -49,8 +53,17 @@ export default function ComparisonTable() {
           <p>Compara función por función qué trae cada plan. Cambias de plan cuando quieras, sin penalización.</p>
         </Reveal>
 
+        <div className="cmp-picker" role="group" aria-label="Plan a comparar">
+          {COMPARISON_COLUMNS.map((col, i) => (
+            <button type="button" aria-pressed={plan === i} onClick={() => setPlan(i)} key={col.name}>
+              {col.name}
+              <small>{precioDe(col)}</small>
+            </button>
+          ))}
+        </div>
+
         <Reveal as="div" className="cmp-wrap">
-          <table className="cmp-table">
+          <table className="cmp-table" data-plan={plan}>
             <caption className="sr-only">Comparación de funciones por plan de Vortex</caption>
             <thead>
               <tr>
@@ -58,7 +71,7 @@ export default function ComparisonTable() {
                 {COMPARISON_COLUMNS.map((col) => (
                   <th scope="col" className={col.popular ? 'is-popular' : undefined} key={col.name}>
                     <b>{col.name}</b>
-                    <i>{col.suscripcionId && precios[col.suscripcionId] != null ? `RD$${formatoPrecio(precios[col.suscripcionId])}/mes` : col.price}</i>
+                    <i>{precioDe(col)}</i>
                   </th>
                 ))}
               </tr>

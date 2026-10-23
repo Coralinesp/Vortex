@@ -272,7 +272,7 @@ export default function RegistroForm() {
               <span>RNC / Cédula de la empresa</span>
               <input
                 type="text"
-                placeholder="1-31-23456-7 ó 000-0000000-0"
+                placeholder="Ej: 1-31-23456-7"
                 maxLength={13}
                 value={form.documentoFiscal}
                 onChange={(e) => handleChange('documentoFiscal', formatCedulaRncInput(e.target.value))}

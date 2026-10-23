@@ -107,8 +107,8 @@ export const COMPARISON_GROUPS = [
     title: 'Administración',
     rows: [
       { label: 'Roles personalizados', values: ['no', 'yes', 'yes'] },
-      { label: 'Usuarios por sucursal', values: ['Hasta 2', '10', '20'] },
-      { label: 'Sucursales', values: ['1', 'Hasta 3', 'Ilimitadas'] },
+      { label: 'Usuarios por sucursal', values: ['Hasta 2', '10', '20'] },
+      { label: 'Sucursales', values: ['1', 'Hasta 3', 'Ilimitadas'] },
     ],
   },
 ];

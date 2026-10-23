@@ -1690,6 +1690,18 @@ h3 { font-size: 1.15rem; font-weight: 700; letter-spacing: -.015em; }
 /* En pantallas chicas la tabla se desplaza en horizontal en vez de encogerse
    hasta volverse ilegible. */
 .cmp-wrap { overflow-x: auto; border-radius: 20px; background: var(--panel); }
+.cmp-picker {
+  display: none; gap: 6px; padding: 6px; margin: 0 0 14px;
+  border-radius: 14px; background: var(--panel);
+}
+.cmp-picker button {
+  flex: 1; display: flex; flex-direction: column; align-items: center; gap: 2px;
+  padding: 10px 6px; border: 0; border-radius: 10px; cursor: pointer;
+  background: transparent; color: var(--text); font: inherit; font-weight: 700; font-size: .9rem;
+}
+.cmp-picker button small { font-size: .7rem; font-weight: 600; color: var(--text-dim); }
+.cmp-picker button[aria-pressed="true"] { background: var(--violet); color: #fff; }
+.cmp-picker button[aria-pressed="true"] small { color: rgba(255,255,255,.8); }
 .cmp-table { width: 100%; min-width: 720px; border-collapse: collapse; }
 
 /* Sin sticky: la cabecera pegajosa se montaba encima de la primera fila de
@@ -2327,6 +2339,8 @@ h3 { font-size: 1.15rem; font-weight: 700; letter-spacing: -.015em; }
   .cs-head h2 { max-width: none; }
   .connect--flip .connect-inner { grid-template-columns: 1fr; }
   .connect--flip .connect-visual { order: 2; }
+  /* Apilado ya no hace falta alargar el panel: hacia arriba tapaba el final de la lista. */
+  .connect--flip .connect-visual::before { top: 0; bottom: 0; }
   .compare-grid { grid-template-columns: 1fr; }
   .connect-copy h2 { max-width: none; }
   .stats-grid { grid-template-columns: repeat(2, 1fr); }
@@ -2366,7 +2380,7 @@ h3 { font-size: 1.15rem; font-weight: 700; letter-spacing: -.015em; }
   .docs-step { grid-template-columns: 28px 1fr; gap: 14px; }
   .docs-step-number { width: 28px; height: 28px; font-size: .78rem; }
   .docs-step-list-row { grid-template-columns: 1fr; gap: 2px; }
-  .giro-grid { grid-template-columns: 1fr; }
+  .giro-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
   .cta-box { grid-template-columns: 1fr; padding: 44px 28px; }
   .cta-shot { display: none; }
 
@@ -2384,7 +2398,14 @@ h3 { font-size: 1.15rem; font-weight: 700; letter-spacing: -.015em; }
   .hardware-list, .footer-grid, .value-grid { grid-template-columns: 1fr; }
   .value-strip { padding-top: 56px; }
   .value-grid { gap: 18px; }
-  .value-item { padding: 28px 24px 30px; }
+  /* Icono al lado del título: las cuatro tarjetas apiladas ocupaban casi dos pantallas. */
+  .value-item {
+    display: grid; grid-template-columns: 44px 1fr; column-gap: 16px; align-items: start;
+    padding: 20px 20px 22px;
+  }
+  .value-icon { grid-row: span 2; width: 44px; height: 44px; }
+  .value-item h3 { margin: 2px 0 6px; font-size: 1.08rem; }
+  .value-item p { font-size: .9rem; }
   .faq-layout { grid-template-columns: 1fr; gap: 28px; }
   .faq-aside { position: static; }
   .faq-support--desk { display: none; }
@@ -2392,7 +2413,41 @@ h3 { font-size: 1.15rem; font-weight: 700; letter-spacing: -.015em; }
   .res-grid { grid-template-columns: 1fr; --row-h: 320px; }
   .res-card, .res-card--wide { grid-column: 1 / -1; }
   .res-foot { padding: 24px; }
-  .res-searchbar { left: 24px; right: -30px; }
+  /* Dentro de la tarjeta: en celular el desborde se veía como una barra cortada. */
+  .res-searchbar { left: 20px; right: 20px; padding: 14px 16px; gap: 10px; }
+  .res-searchbar span { font-size: 1rem; }
+  .res-searchbar svg { width: 20px; height: 20px; }
+  .res-caret { height: 18px; }
+  /* La ilustración de la guía se centra en el espacio libre en vez de dejar un hueco abajo. */
+  .res-card--flip .res-shot { top: 50%; transform: translateY(-50%); }
+  /* Hero: la maqueta del POS medía casi una pantalla y media; con menos productos y una
+     sola línea en la factura se entiende igual. */
+  .va-grid > .va-prod:nth-child(n+5) { display: none; }
+  .va-lines > .va-line:nth-child(n+2) { display: none; }
+  /* Las tres columnas no caben: se elige el plan arriba y se ve solo esa columna, sin scroll lateral. */
+  .cmp-picker { display: flex; }
+  .cmp-wrap { overflow-x: visible; }
+  .cmp-table { min-width: 0; table-layout: fixed; }
+  .cmp-table thead th, .cmp-table tbody td { display: none; }
+  .cmp-table[data-plan="0"] thead th:nth-of-type(1), .cmp-table[data-plan="0"] tbody td:nth-of-type(1),
+  .cmp-table[data-plan="1"] thead th:nth-of-type(2), .cmp-table[data-plan="1"] tbody td:nth-of-type(2),
+  .cmp-table[data-plan="2"] thead th:nth-of-type(3), .cmp-table[data-plan="2"] tbody td:nth-of-type(3) { display: table-cell; }
+  .cmp-table thead td { width: 58%; }
+  .cmp-table tbody td { width: 42%; padding-inline: 8px; }
+  .giro { padding: 18px 16px; }
+  /* Contacto: el dato (teléfono, correo) va debajo de la descripción, no apretado al lado. */
+  .ct-channels li { display: grid; grid-template-columns: 38px 1fr; column-gap: 14px; row-gap: 4px; align-items: start; }
+  .ct-channels li > :nth-child(3) {
+    grid-column: 2; justify-self: start;
+    flex-direction: row !important; flex-wrap: wrap; gap: 2px 14px !important; align-items: flex-start !important;
+  }
+  /* Recursos: las pestañas se deslizan en una sola línea en vez de partirse en dos. */
+  .rc-tabs { flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; }
+  .rc-tabs::-webkit-scrollbar { display: none; }
+  .rc-tab { white-space: nowrap; padding: 10px 12px; }
+  .giro-icon { width: 40px; height: 40px; margin-bottom: 12px; }
+  .giro h3 { font-size: .98rem; }
+  .giro p { font-size: .84rem; }
   .res-screen, .res-play { left: 24px; }
   .pp-switch { width: 100%; justify-content: stretch; }
   .pp-opt { flex: 1; justify-content: center; padding-inline: 12px; }
