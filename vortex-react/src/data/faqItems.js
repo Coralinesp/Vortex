@@ -22,7 +22,7 @@ export const FAQ_ITEMS = [
   {
     question: '¿Incluye facturación electrónica?',
     answer:
-      'Los planes Profesional y Empresarial emiten comprobantes fiscales electrónicos (e-CF) directamente desde el ticket, administran tus secuencias de NCF y envían la factura al cliente por correo de forma automática. El plan Profesional incluye 999 e-CF al mes; a partir del comprobante 1,000 de ese mes se cobra un cargo adicional por cada uno. En el Empresarial el volumen se define en la cotización.',
+      'Sí, en todos los planes. Vortex emite comprobantes fiscales electrónicos (e-CF) directamente desde el ticket, administra tus secuencias de NCF y envía la factura al cliente por correo de forma automática. Los planes Básico y Profesional incluyen 999 e-CF al mes. Si te pasas, tu facturación no se detiene: te avisamos antes de llegar al límite y los comprobantes adicionales se suman a tu próxima factura. En el Empresarial el volumen se define en la cotización.',
   },
   {
     question: '¿Puedo cancelar cuando quiera?',
