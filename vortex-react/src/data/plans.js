@@ -24,7 +24,17 @@ export const PLANS = [
     description:
       'Ideal para un negocio en crecimiento que ya maneja proveedores, varias sucursales y necesita un mayor control de su equipo de trabajo.',
     includesHeading: 'Todo lo del Plan Básico, y además:',
-    features: ['Compras', 'Kardex avanzado', 'Promociones', 'Pagos mixtos', 'Roles personalizados', 'Hasta 3 sucursales', '10 usuarios por sucursal'],
+    features: [
+      'Compras',
+      'Kardex avanzado',
+      'Promociones',
+      'Pagos mixtos',
+      'Roles personalizados',
+      'Hasta 3 sucursales',
+      '10 usuarios por sucursal',
+      'Facturación electrónica: 999 e-CF al mes incluidos',
+      'Desde el e-CF 1,000 del mes, cargo extra por comprobante',
+    ],
     ctaLabel: 'Empezar ahora',
     ctaHash: '#registro',
     ctaVariant: 'light',
@@ -60,6 +70,7 @@ export const COMPARISON_GROUPS = [
       { label: 'Impuestos', values: ['yes', 'yes', 'yes'] },
       { label: 'Pagos mixtos', values: ['no', 'yes', 'yes'] },
       { label: 'Promociones', values: ['no', 'yes', 'yes'] },
+      { label: 'Facturación electrónica (e-CF)', values: ['no', '999/mes incluidos', 'Según cotización'] },
     ],
   },
   {

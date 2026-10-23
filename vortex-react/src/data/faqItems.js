@@ -22,7 +22,7 @@ export const FAQ_ITEMS = [
   {
     question: '¿Incluye facturación electrónica?',
     answer:
-      'Los planes Profesional y Empresarial emiten comprobantes fiscales electrónicos (e-CF) directamente desde el ticket, administran tus secuencias de NCF y envían la factura al cliente por correo de forma automática.',
+      'Los planes Profesional y Empresarial emiten comprobantes fiscales electrónicos (e-CF) directamente desde el ticket, administran tus secuencias de NCF y envían la factura al cliente por correo de forma automática. El plan Profesional incluye 999 e-CF al mes; a partir del comprobante 1,000 de ese mes se cobra un cargo adicional por cada uno. En el Empresarial el volumen se define en la cotización.',
   },
   {
     question: '¿Puedo cancelar cuando quiera?',
