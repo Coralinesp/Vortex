@@ -16,7 +16,7 @@ export const PLANS = [
       'Devoluciones',
       'Impuestos',
       'Reportes básicos',
-      'Facturación electrónica: 999 e-CF al mes incluidos',
+      'Facturación electrónica: 999 e-CF al año incluidos',
       '¿Te pasas de 999? No se detiene: los e-CF extra se suman a tu factura',
       'Hasta 2 usuarios',
       '1 sucursal',
@@ -87,7 +87,7 @@ export const COMPARISON_GROUPS = [
       { label: 'Impuestos', values: ['yes', 'yes', 'yes'] },
       { label: 'Pagos mixtos', values: ['no', 'yes', 'yes'] },
       { label: 'Promociones', values: ['no', 'yes', 'yes'] },
-      { label: 'Facturación electrónica (e-CF)', values: ['999/mes incluidos', '999/mes incluidos', 'Según cotización'] },
+      { label: 'Facturación electrónica (e-CF)', values: ['999/año incluidos', '999/año incluidos', 'Según cotización'] },
     ],
   },
   {
