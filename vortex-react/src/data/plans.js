@@ -49,7 +49,14 @@ export const PLANS = [
     description:
       'Ideal para una empresa consolidada, con varias sucursales, ventas a crédito y necesidad de análisis avanzado del negocio.',
     includesHeading: 'Todo lo del Plan Profesional, y además:',
-    features: ['Crédito', 'Fidelización', 'Reportes avanzados', 'Sucursales ilimitadas', '20 usuarios por sucursal'],
+    features: [
+      'Crédito',
+      'Fidelización',
+      'Reportes avanzados',
+      'Sucursales ilimitadas',
+      '20 usuarios por sucursal',
+      'Facturación electrónica: volumen de e-CF a la medida',
+    ],
     ctaLabel: 'Solicitar cotización',
     ctaTo: '/contacto',
     ctaVariant: 'dark',
